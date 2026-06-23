@@ -334,6 +334,13 @@
       font-family: var(--mono); font-size: 13px; color: var(--amber);
     }
     .pricing-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 28px; }
+    .pricing-table-wrap table {
+      table-layout: fixed;
+    }
+    .pricing-table-wrap table th:nth-child(1) { width: 22%; }
+    .pricing-table-wrap table th:nth-child(2) { width: 32%; }
+    .pricing-table-wrap table th:nth-child(3) { width: 23%; }
+    .pricing-table-wrap table th:nth-child(4) { width: 23%; }
     .price-tag { font-size: 20px; font-weight: 900; color: var(--teal); font-family: var(--mono); }
     .price-unit { font-size: 11px; color: var(--muted); display: block; }
     .price-save { font-size: 11px; color: var(--lime); font-weight: 700; }
