@@ -287,7 +287,7 @@
     }
     .schedule-wrap th {
       background: #CCEEFF;
-      color: #AAFFEE; font-size: 12px;
+      color: #0a1628; font-size: 12px;
       font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
       padding: 14px 16px; text-align: center;
       border: 1px solid var(--border);
@@ -303,6 +303,52 @@
     .td-highlight { color: var(--accent) !important; font-weight: 600; }
     .td-break { color: var(--text2) !important; font-style: italic; font-size: 13px; }
     .td-end { color: var(--text2) !important; font-size: 13px; }
+
+    .schedule-wrap {
+      --schedule-slot-height: 58px;
+    }
+    .schedule-wrap table {
+      table-layout: fixed;
+    }
+    .schedule-wrap tr.slot-30 {
+      height: var(--schedule-slot-height);
+    }
+    .schedule-wrap tr.slot-double {
+      height: calc(var(--schedule-slot-height) * 2);
+    }
+    .schedule-wrap tr.slot-break {
+      height: calc(var(--schedule-slot-height) * 1.35);
+    }
+    .schedule-wrap tr.slot-normal {
+      height: var(--schedule-slot-height);
+    }
+    .schedule-wrap td.schedule-split-cell {
+      padding: 0;
+    }
+    .schedule-split-inner {
+      display: grid;
+      grid-template-rows: 2fr 1fr;
+      height: calc(var(--schedule-slot-height) * 3);
+      min-height: calc(var(--schedule-slot-height) * 3);
+    }
+    .schedule-split-top,
+    .schedule-split-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .schedule-split-top {
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule-split-bottom {
+      color: var(--accent) !important;
+      font-weight: 600;
+    }
+
 
     /* ── PRICING ── */
     .pricing-section { background: var(--bg2); }
@@ -645,62 +691,50 @@
         <a href="https://maps.google.com/?q=國立臺灣大學文學院演講廳" target="_blank" rel="noopener" style="color:var(--accent);font-size:13px;font-weight:600;text-decoration:none;">📍 在 Google Maps 中查看 →</a>
       </div>
     </div>
-    <div class="schedule-wrap fade-in"> 
-      <table> 
-        <thead> 
-          <tr> 
-            <th>
-              時間
-            </th> 
-            <th>
-              08.19（三）
-            </th> 
-            <th>
-              08.20（四）
-            </th> 
-            <th>
-              08.21（五）
-            </th> 
-          </tr> 
+    <div class="schedule-wrap fade-in">
+      <table>
+        <thead>
+          <tr>
+            <th>時間</th>
+            <th>08.19（三）</th>
+            <th>08.20（四）</th>
+            <th>08.21（五）</th>
+          </tr>
         </thead>
-<tbody>
-  <tr>
-    <td>10:00–10:30</td>
-    <td>語奧是啥東西？</td>
-    <td rowspan="3" class="td-highlight">句子疊疊樂</td>
-    <td rowspan="2">小組對抗賽</td>
-  </tr>
-
-  <tr>
-    <td rowspan="2">10:30–12:30</td>
-    <td rowspan="2" class="td-highlight">聲音的隱形密碼</td>
-  </tr>
-
-  <tr>
-    <td class="td-highlight">破譯時刻</td>
-  </tr>
-
-  <tr>
-    <td>12:30–14:00</td>
-    <td colspan="3" class="td-break">午休 ＋ 小組任務（供應午餐）</td>
-  </tr>
-
-  <tr>
-    <td>14:00–16:00</td>
-    <td>從語言看世界</td>
-    <td>他們為什麼這樣數？</td>
-    <td class="td-highlight">國手生存指南</td>
-  </tr>
-
-  <tr>
-    <td>16:00–16:30</td>
-    <td class="td-end">賦歸</td>
-    <td class="td-end">賦歸</td>
-    <td class="td-end">結業式 ＋ 賦歸</td>
-  </tr>
-</tbody>
-        </table> 
-    </div>
+        <tbody>
+          <tr class="slot-30">
+            <td>10:00–10:30</td>
+            <td>語奧是啥東西？</td>
+            <td rowspan="2" class="td-highlight">句子疊疊樂</td>
+            <td rowspan="2" class="schedule-split-cell">
+              <div class="schedule-split-inner">
+                <div class="schedule-split-top">小組對抗賽</div>
+                <div class="schedule-split-bottom">破譯時刻</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="slot-double">
+            <td>10:30–12:30</td>
+            <td class="td-highlight">聲音的隱形密碼</td>
+          </tr>
+          <tr class="slot-break">
+            <td>12:30–14:00</td>
+            <td colspan="3" class="td-break">午休 ＋ 小組任務（供應午餐）</td>
+          </tr>
+          <tr class="slot-normal">
+            <td>14:00–16:00</td>
+            <td>從語言看世界</td>
+            <td>他們為什麼這樣數？</td>
+            <td class="td-highlight">國手生存指南</td>
+          </tr>
+          <tr class="slot-30">
+            <td>16:00–16:30</td>
+            <td class="td-end">賦歸</td>
+            <td class="td-end">賦歸</td>
+            <td class="td-end">結業式 ＋ 賦歸</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

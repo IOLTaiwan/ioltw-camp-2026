@@ -212,7 +212,7 @@
     .schedule-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); }
     .schedule-wrap table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 580px; }
     .schedule-wrap th {
-      background: #CCEEFF; color: #AAFFEE; font-size: 12px;
+      background: #CCEEFF; color: #0a1628; font-size: 12px;
       font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
       padding: 14px 16px; text-align: center; border: 1px solid var(--border);
     }
@@ -227,6 +227,52 @@
     .td-highlight { color: var(--accent) !important; font-weight: 600; }
     .td-break { color: var(--text2) !important; font-style: italic; font-size: 13px; }
     .td-end { color: var(--text2) !important; font-size: 13px; }
+
+    .schedule-wrap {
+      --schedule-slot-height: 58px;
+    }
+    .schedule-wrap table {
+      table-layout: fixed;
+    }
+    .schedule-wrap tr.slot-30 {
+      height: var(--schedule-slot-height);
+    }
+    .schedule-wrap tr.slot-double {
+      height: calc(var(--schedule-slot-height) * 2);
+    }
+    .schedule-wrap tr.slot-break {
+      height: calc(var(--schedule-slot-height) * 1.35);
+    }
+    .schedule-wrap tr.slot-normal {
+      height: var(--schedule-slot-height);
+    }
+    .schedule-wrap td.schedule-split-cell {
+      padding: 0;
+    }
+    .schedule-split-inner {
+      display: grid;
+      grid-template-rows: 2fr 1fr;
+      height: calc(var(--schedule-slot-height) * 3);
+      min-height: calc(var(--schedule-slot-height) * 3);
+    }
+    .schedule-split-top,
+    .schedule-split-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 16px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .schedule-split-top {
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule-split-bottom {
+      color: var(--accent) !important;
+      font-weight: 600;
+    }
+
 
     /* ── PRICING ── */
     .pricing-section { background: var(--bg2); }
@@ -519,42 +565,39 @@
             <th>Aug 21 (Fri)</th>
           </tr>
         </thead>
-<tbody>
-  <tr>
-    <td>10:00–10:30</td>
-    <td>What is the IOL?</td>
-    <td rowspan="3" class="td-highlight">Sentence Stacking</td>
-    <td rowspan="2">Team Challenge</td>
-  </tr>
-
-  <tr>
-    <td rowspan="2">10:30–12:30</td>
-    <td rowspan="2" class="td-highlight">The Hidden Code of Sound</td>
-  </tr>
-
-  <tr>
-    <td class="td-highlight">Decoding Hour</td>
-  </tr>
-
-  <tr>
-    <td>12:30–14:00</td>
-    <td colspan="3" class="td-break">Lunch Break and Group Activity (lunch provided)</td>
-  </tr>
-
-  <tr>
-    <td>14:00–16:00</td>
-    <td>Language &amp; the World</td>
-    <td>How Do They Count?</td>
-    <td class="td-highlight">Olympian's Survival Guide</td>
-  </tr>
-
-  <tr>
-    <td>16:00–16:30</td>
-    <td class="td-end">Farewell</td>
-    <td class="td-end">Farewell</td>
-    <td class="td-end">Closing Ceremony and Farewell</td>
-  </tr>
-</tbody>
+        <tbody>
+          <tr class="slot-30">
+            <td>10:00–10:30</td>
+            <td>What is the IOL?</td>
+            <td rowspan="2" class="td-highlight">Sentence Stacking</td>
+            <td rowspan="2" class="schedule-split-cell">
+              <div class="schedule-split-inner">
+                <div class="schedule-split-top">Team Challenge</div>
+                <div class="schedule-split-bottom">Decoding Hour</div>
+              </div>
+            </td>
+          </tr>
+          <tr class="slot-double">
+            <td>10:30–12:30</td>
+            <td class="td-highlight">The Hidden Code of Sound</td>
+          </tr>
+          <tr class="slot-break">
+            <td>12:30–14:00</td>
+            <td colspan="3" class="td-break">Lunch Break and Group Activity (lunch provided)</td>
+          </tr>
+          <tr class="slot-normal">
+            <td>14:00–16:00</td>
+            <td>Language &amp; the World</td>
+            <td>How Do They Count?</td>
+            <td class="td-highlight">Olympian's Survival Guide</td>
+          </tr>
+          <tr class="slot-30">
+            <td>16:00–16:30</td>
+            <td class="td-end">Farewell</td>
+            <td class="td-end">Farewell</td>
+            <td class="td-end">Closing Ceremony and Farewell</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
