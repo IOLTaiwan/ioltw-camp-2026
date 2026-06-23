@@ -17,455 +17,447 @@
   <meta name="twitter:description" content="國中生以上語言奧林匹亞夏令營，8/19–21 台大，超早鳥優惠至 7/11！" />
 
   <style>
-    /* ── LOGIC THEME VARIABLES — DARK (default) ── */
+    /* ── VARIABLES — DARK (default) ── */
     :root {
-      --ink:      #0d1117;
-      --ink2:     #161b22;
-      --ink3:     #21262d;
-      --border:   #30363d;
-      --teal:     #00b4d8;
-      --teal-dim: #0077a8;
-      --lime:     #39d353;
-      --amber:    #f0b429;
-      --red:      #f85149;
-      --muted:    #8b949e;
-      --text:     #e6edf3;
-      --text2:    #b0bec5;
-      --card:     #161b22;
-      --radius:   6px;
-      --mono:     'Courier New', 'Menlo', monospace;
-      --nav-bg:   rgba(13,17,23,0.92);
-      --grid-line: rgba(0,180,216,.06);
-      --sym-color: rgba(0,180,216,.15);
+      --bg:       #0a1628;
+      --bg2:      #0d1e35;
+      --bg3:      #112240;
+      --border:   rgba(100,160,230,.14);
+      --accent:   #4ec9f0;
+      --accent2:  #a78bfa;
+      --amber:    #f6c90e;
+      --green:    #4ade80;
+      --red:      #f87171;
+      --text:     #e2eaf8;
+      --text2:    #7d8fa8;
+      --nav-bg:   rgba(10,22,40,0.90);
+      --radius:   10px;
+      --radius-lg:16px;
+      --shadow:   0 4px 24px rgba(0,0,0,.35);
     }
 
     /* ── LIGHT MODE ── */
     @media (prefers-color-scheme: light) {
       :root {
-        --ink:      #ffffff;
-        --ink2:     #f6f8fa;
-        --ink3:     #eaeef2;
-        --border:   #d0d7de;
-        --teal:     #0969da;
-        --teal-dim: #0550ae;
-        --lime:     #1a7f37;
-        --amber:    #9a6700;
-        --red:      #cf222e;
-        --muted:    #656d76;
-        --text:     #1f2328;
-        --text2:    #57606a;
-        --card:     #ffffff;
-        --nav-bg:   rgba(255,255,255,0.92);
-        --grid-line: rgba(9,105,218,.05);
-        --sym-color: rgba(9,105,218,.12);
+        --bg:       #f5f7fa;
+        --bg2:      #ffffff;
+        --bg3:      #eaf0f9;
+        --border:   rgba(0,60,120,.10);
+        --accent:   #0369a1;
+        --accent2:  #7c3aed;
+        --amber:    #b45309;
+        --green:    #16a34a;
+        --red:      #dc2626;
+        --text:     #1e293b;
+        --text2:    #475569;
+        --nav-bg:   rgba(245,247,250,0.92);
+        --shadow:   0 4px 24px rgba(0,60,120,.08);
       }
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', 'PingFang TC', 'Segoe UI', sans-serif;
+      background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* ─── CIRCUIT PATTERN ─── */
-    .circuit-bg {
-      background-color: var(--ink);
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 40px 40px;
-    }
-
-    /* ─── NAV ─── */
+    /* ── NAV ── */
     nav {
-      position: sticky; top: 0; z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       background: var(--nav-bg);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px) saturate(1.5);
+      -webkit-backdrop-filter: blur(16px) saturate(1.5);
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
     }
     .nav-inner {
-      max-width: 1040px; margin: 0 auto;
+      max-width: 1100px; margin: 0 auto; padding: 0 28px;
       display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
+      height: 58px;
     }
     .nav-logo {
-      font-family: var(--mono);
-      font-size: 13px; font-weight: 700;
-      color: var(--teal);
-      display: flex; align-items: center; gap: 8px;
+      font-size: 15px; font-weight: 700;
+      color: var(--accent); letter-spacing: .01em;
     }
-    .nav-logo::before {
-      content: '>';
-      color: var(--lime); font-size: 16px;
-    }
-    .nav-links { display: flex; gap: 20px; }
+    .nav-links { display: flex; gap: 6px; }
     .nav-links a {
-      text-decoration: none; color: var(--muted);
-      font-size: 13px; font-weight: 600;
-      transition: color .15s;
-      font-family: var(--mono);
+      font-size: 14px; color: var(--text2); font-weight: 500;
+      text-decoration: none; padding: 6px 12px; border-radius: 6px;
+      transition: color .2s, background .2s;
     }
-    .nav-links a:hover { color: var(--teal); }
-    @media(max-width:600px){ .nav-links { gap: 10px; } .nav-links a { font-size: 11px; } }
+    .nav-links a:hover { color: var(--accent); background: rgba(78,201,240,.08); }
 
-    /* ─── COUNTDOWN ─── */
+    /* ── COUNTDOWN BAR ── */
     .countdown-bar {
-      background: var(--ink2);
+      position: fixed; top: 58px; left: 0; right: 0; z-index: 190;
+      background: linear-gradient(90deg, rgba(78,201,240,.15), rgba(167,139,250,.10));
       border-bottom: 1px solid var(--border);
-      text-align: center; padding: 12px 24px;
-      font-family: var(--mono); font-size: 13px;
+      text-align: center; padding: 8px 20px;
+      font-size: 13px; color: var(--text2);
+      backdrop-filter: blur(8px);
     }
-    #countdown { color: var(--amber); font-weight: 700; font-size: 16px; }
-    .countdown-bar .cd-label { color: var(--muted); }
-    .countdown-bar strong { color: var(--text); }
+    .cd-count { color: var(--accent); font-weight: 700; font-size: 14px; }
+    .cd-sep { margin: 0 12px; opacity: .4; }
 
-    /* ─── HERO ─── */
+    /* ── HERO ── */
     .hero {
-      background: var(--ink);
-      padding: 96px 24px 112px;
-      position: relative; overflow: hidden; text-align: center;
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 60% 40%, #0f2a50 0%, #0a1628 60%);
+      padding-top: 120px;
     }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-      background-size: 48px 48px;
+    #starfield {
+      position: absolute; inset: 0; pointer-events: none;
     }
-    /* Corner dots */
-    .hero-grid::before, .hero-grid::after {
-      content: '';
-      position: absolute;
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      filter: blur(90px);
-      pointer-events: none;
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; max-width: 760px; padding: 0 28px;
     }
-    .hero-grid::before {
-      background: rgba(0,180,216,.18);
-      top: -80px; left: -80px;
+    .hero-eyebrow {
+      font-size: 12px; font-weight: 600; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 20px; opacity: .9;
     }
-    .hero-grid::after {
-      background: rgba(57,211,83,.12);
-      bottom: -80px; right: -80px;
-    }
-
-    .hero-content { position: relative; z-index: 1; }
-
-    .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--mono); font-size: 12px; letter-spacing: 2px;
-      color: var(--teal);
-      border: 1px solid var(--teal);
-      border-radius: 4px;
-      padding: 4px 14px;
-      margin-bottom: 28px;
-      background: rgba(0,180,216,.07);
-    }
-    .hero-tag::before { content: '[ '; } .hero-tag::after { content: ' ]'; }
-
+    .hero-eyebrow span { opacity: .5; margin: 0 10px; }
     .hero h1 {
-      font-size: clamp(36px, 8vw, 80px);
-      font-weight: 900;
-      line-height: 1.05;
-      margin-bottom: 16px;
-      letter-spacing: -2px;
+      font-size: clamp(36px, 6vw, 68px);
+      font-weight: 800; line-height: 1.15;
+      color: #fff; letter-spacing: -.01em;
+      margin-bottom: 18px;
     }
     .hero h1 em {
       font-style: normal;
-      color: var(--teal);
-      position: relative;
+      background: linear-gradient(135deg, #4ec9f0, #a78bfa);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
-    .hero h1 em::after {
-      content: '';
-      position: absolute; left: 0; bottom: 4px;
-      width: 100%; height: 3px;
-      background: var(--teal);
-      opacity: .4;
-    }
-
-    .hero-logic-symbols {
-      position: absolute;
-      font-family: var(--mono); font-size: 18px;
-      color: var(--sym-color);
-      pointer-events: none;
-      user-select: none;
-      top: 0; left: 0; right: 0; bottom: 0;
-    }
-    .sym { position: absolute; }
-
     .hero-sub {
-      font-size: clamp(14px, 2.5vw, 17px);
-      color: var(--text2); margin-bottom: 36px;
-      max-width: 580px; margin-left: auto; margin-right: auto;
+      font-size: 16px; color: var(--text2); line-height: 1.8;
+      margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto;
     }
-
-    .hero-meta {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
-      margin-bottom: 44px;
+    .hero-stats {
+      display: flex; justify-content: center; gap: 0;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 40px;
+      background: rgba(255,255,255,.03);
     }
-    .hero-chip {
-      display: flex; align-items: center; gap: 8px;
-      background: var(--ink2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 8px 18px;
-      font-size: 14px; font-family: var(--mono);
-      color: var(--text2);
+    .hero-stat {
+      flex: 1; padding: 18px 24px; text-align: center;
+      border-right: 1px solid var(--border);
     }
-    .hero-chip .icon { color: var(--teal); }
-
-    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
+    .hero-stat:last-child { border-right: none; }
+    .stat-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+    }
+    .stat-val {
+      font-size: 16px; font-weight: 700; color: #fff; line-height: 1.3;
+    }
+    .hero-btns {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
-      background: var(--teal); color: var(--ink);
-      font-weight: 800; font-size: 16px;
-      padding: 14px 36px; border-radius: 4px;
-      text-decoration: none;
-      transition: background .2s, transform .2s;
-      font-family: var(--mono);
+      background: var(--accent); color: #0a1628;
+      font-size: 15px; font-weight: 700;
+      padding: 13px 28px; border-radius: 8px;
+      text-decoration: none; transition: opacity .2s, transform .2s;
     }
-    .btn-primary:hover { background: #00caf0; transform: translateY(-2px); }
-
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: var(--text);
-      border: 1px solid var(--border);
-      font-weight: 600; font-size: 15px;
-      padding: 13px 28px; border-radius: 4px;
-      text-decoration: none;
-      transition: border-color .2s, color .2s, transform .2s;
-      font-family: var(--mono);
+      border: 1.5px solid var(--border); color: var(--text);
+      font-size: 15px; font-weight: 600;
+      padding: 13px 28px; border-radius: 8px;
+      text-decoration: none; background: rgba(255,255,255,.04);
+      transition: border-color .2s, background .2s, transform .2s;
     }
-    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+    .btn-secondary:hover { border-color: var(--accent); background: rgba(78,201,240,.06); transform: translateY(-1px); }
 
-    /* ─── CONTAINER ─── */
-    .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      color: var(--text2); font-size: 11px; letter-spacing: .15em;
+      text-transform: uppercase; z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .scroll-hint-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: .3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.1); }
+    }
 
-    /* ─── SECTION ─── */
-    section { padding: 72px 0; border-bottom: 1px solid var(--border); }
-    section:last-of-type { border-bottom: none; }
-
+    /* ── SECTION SHARED ── */
+    section { padding: 88px 0; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
     .section-eyebrow {
-      font-family: var(--mono); font-size: 12px; letter-spacing: 3px;
-      color: var(--teal); text-transform: uppercase;
-      margin-bottom: 10px;
+      font-size: 11px; font-weight: 700; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 12px;
     }
-    .section-eyebrow::before { content: '// '; color: var(--muted); }
-
     .section-title {
-      font-size: clamp(22px, 4vw, 32px);
-      font-weight: 900; margin-bottom: 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800; color: var(--text); line-height: 1.2;
+      margin-bottom: 12px;
     }
-    .section-sub { color: var(--text2); font-size: 14px; margin-bottom: 40px; }
+    .section-sub {
+      font-size: 16px; color: var(--text2); margin-bottom: 52px;
+    }
 
-    /* ─── HIGHLIGHTS ─── */
-    .highlights { background: var(--ink2); }
+    /* ── FADE-IN ON SCROLL ── */
+    .fade-in {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── HIGHLIGHTS (alt bg) ── */
+    .highlights { background: var(--bg2); }
     .highlights-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
     }
     .highlight-card {
-      background: var(--ink);
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      position: relative; overflow: hidden;
-      transition: border-color .2s, transform .2s;
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: transform .2s, box-shadow .2s;
     }
-    .highlight-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    @media (prefers-color-scheme: light) {
+      .highlight-card { background: var(--bg3); }
     }
-    .highlight-card:nth-child(1)::before { background: var(--teal); }
-    .highlight-card:nth-child(2)::before { background: var(--lime); }
-    .highlight-card:nth-child(3)::before { background: var(--amber); }
-    .highlight-card:nth-child(4)::before { background: var(--red); }
-    .highlight-card:hover { border-color: var(--teal); transform: translateY(-3px); }
-    .hi-icon { font-size: 32px; margin-bottom: 12px; }
+    .highlight-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .hi-icon { font-size: 32px; margin-bottom: 14px; }
     .hi-num {
-      position: absolute; top: 16px; right: 16px;
-      font-family: var(--mono); font-size: 11px; color: var(--muted);
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 8px;
     }
-    .hi-title { font-weight: 800; font-size: 16px; margin-bottom: 6px; }
-    .hi-desc { font-size: 13px; color: var(--text2); }
+    .hi-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .hi-desc { font-size: 14px; color: var(--text2); line-height: 1.7; }
 
-    /* ─── SCHEDULE ─── */
-    .schedule-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    thead th {
-      background: var(--ink2);
-      color: var(--teal);
-      padding: 14px 16px;
-      text-align: center;
-      font-family: var(--mono); font-size: 13px; font-weight: 700;
+    /* ── SCHEDULE ── */
+    .schedule-section { background: var(--bg); }
+    .venue-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 16px;
+      font-size: 13px; color: var(--text2);
+      margin-bottom: 28px;
+    }
+    .venue-tag span { color: var(--accent); }
+    .schedule-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+    .schedule-wrap table {
+      width: 100%; border-collapse: collapse;
+      font-size: 14px; min-width: 580px;
+    }
+    .schedule-wrap th {
+      background: var(--bg3);
+      color: var(--text2); font-size: 12px;
+      font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 14px 16px; text-align: center;
       border-bottom: 1px solid var(--border);
     }
-    thead th:first-child { color: var(--muted); }
-    tbody tr { border-bottom: 1px solid var(--border); }
-    tbody tr:last-child { border-bottom: none; }
-    tbody td {
+    .schedule-wrap th:first-child { text-align: left; }
+    .schedule-wrap td {
       padding: 13px 16px; text-align: center;
-      background: var(--ink);
-      vertical-align: middle;
+      border-bottom: 1px solid var(--border); vertical-align: middle;
+      color: var(--text); font-size: 14px;
     }
-    tbody td:first-child {
-      font-family: var(--mono); font-size: 12px;
-      color: var(--muted); background: var(--ink2);
-      white-space: nowrap;
-    }
-    .td-highlight { background: rgba(0,180,216,.08); color: var(--teal); font-weight: 600; }
-    .td-break { background: rgba(240,180,41,.06); color: var(--amber); font-style: italic; }
-    .td-end { background: rgba(57,211,83,.06); color: var(--lime); }
+    .schedule-wrap td:first-child { text-align: left; color: var(--text2); font-size: 13px; font-weight: 600; white-space: nowrap; }
+    .schedule-wrap tr:last-child td { border-bottom: none; }
+    .schedule-wrap tr:hover td { background: rgba(78,201,240,.04); }
+    .td-highlight { color: var(--accent) !important; font-weight: 600; }
+    .td-break { color: var(--text2) !important; font-style: italic; font-size: 13px; }
+    .td-end { color: var(--text2) !important; font-size: 13px; }
 
-    /* ─── PRICING ─── */
-    .pricing { background: var(--ink2); }
+    /* ── PRICING ── */
+    .pricing-section { background: var(--bg2); }
     .early-note {
-      background: rgba(240,180,41,.08);
-      border: 1px solid rgba(240,180,41,.3);
+      background: rgba(246,201,14,.07);
+      border: 1px solid rgba(246,201,14,.25);
       border-radius: var(--radius);
-      padding: 14px 18px; margin-bottom: 24px;
+      padding: 14px 20px; margin-bottom: 28px;
       font-size: 14px; color: var(--amber);
     }
-    .pricing-table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 28px; }
-    .pricing-table-wrap table {
-      table-layout: fixed;
-    }
+    .pricing-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 24px; }
+    .pricing-table-wrap table { width: 100%; border-collapse: collapse; min-width: 520px; table-layout: fixed; }
     .pricing-table-wrap table th:nth-child(1) { width: 22%; }
     .pricing-table-wrap table th:nth-child(2) { width: 32%; }
     .pricing-table-wrap table th:nth-child(3) { width: 23%; }
     .pricing-table-wrap table th:nth-child(4) { width: 23%; }
-    .price-tag { font-size: 20px; font-weight: 900; color: var(--teal); font-family: var(--mono); }
-    .price-unit { font-size: 11px; color: var(--muted); display: block; }
-    .price-save { font-size: 11px; color: var(--lime); font-weight: 700; }
-    .badge-early {
-      display: inline-block; background: rgba(248,81,73,.15);
-      border: 1px solid rgba(248,81,73,.4);
-      color: var(--red);
-      font-size: 10px; font-weight: 700; font-family: var(--mono);
-      padding: 2px 7px; border-radius: 4px; margin-top: 4px;
+    .pricing-table-wrap th {
+      background: var(--bg3);
+      color: var(--text2); font-size: 13px; font-weight: 700;
+      letter-spacing: .04em; padding: 14px 16px; text-align: center;
+      border-bottom: 1px solid var(--border);
     }
-    .pricing-btns { text-align: center; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .pricing-table-wrap th:first-child { text-align: left; }
+    .pricing-table-wrap td {
+      padding: 16px; text-align: center;
+      border-bottom: 1px solid var(--border); vertical-align: middle;
+    }
+    .pricing-table-wrap tr:last-child td { border-bottom: none; }
+    .pricing-table-wrap tr:hover td { background: rgba(78,201,240,.04); }
+    .price-tag { font-size: 22px; font-weight: 800; color: var(--accent); }
+    .price-unit { display: block; font-size: 12px; color: var(--text2); margin-top: 2px; }
+    .price-save { display: block; font-size: 12px; color: var(--green); font-weight: 600; margin-top: 3px; }
+    .badge-early {
+      display: inline-block; background: rgba(246,201,14,.15);
+      color: var(--amber); font-size: 10px; font-weight: 700;
+      letter-spacing: .1em; padding: 2px 8px; border-radius: 4px;
+      border: 1px solid rgba(246,201,14,.3); margin-top: 4px;
+    }
+    .pricing-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+    .pricing-note { font-size: 13px; color: var(--text2); margin-bottom: 8px; }
 
-    /* ─── PAYMENT ─── */
+    /* ── PAYMENT ── */
+    .payment-section { background: var(--bg); }
     .payment-box {
-      background: var(--ink2);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
+      border-radius: var(--radius-lg);
+      overflow: hidden; margin-bottom: 20px;
     }
     .payment-row {
-      display: flex; gap: 0;
+      display: flex; align-items: stretch;
       border-bottom: 1px solid var(--border);
     }
     .payment-row:last-child { border-bottom: none; }
     .payment-label {
-      font-family: var(--mono); font-size: 12px;
-      color: var(--muted); letter-spacing: 1px;
-      background: var(--ink); width: 100px; flex-shrink: 0;
-      padding: 14px 16px; display: flex; align-items: center;
+      width: 100px; flex-shrink: 0;
+      background: var(--bg2); color: var(--text2);
+      font-size: 13px; font-weight: 600;
+      padding: 16px 20px;
       border-right: 1px solid var(--border);
+      display: flex; align-items: center;
     }
-    .payment-val { padding: 14px 18px; font-weight: 600; font-size: 15px; color: var(--text); }
-    .payment-val.mono { font-family: var(--mono); color: var(--teal); font-size: 18px; letter-spacing: 2px; }
+    .payment-val {
+      padding: 16px 20px; font-size: 15px; font-weight: 600;
+      color: var(--text); display: flex; align-items: center;
+    }
+    .payment-val.mono { color: var(--accent); letter-spacing: .08em; }
     .payment-note {
-      background: rgba(57,211,83,.07);
-      border: 1px solid rgba(57,211,83,.2);
-      border-radius: var(--radius);
-      padding: 14px 18px; margin-top: 16px;
-      font-size: 13px; color: var(--lime);
-      font-family: var(--mono);
+      background: rgba(74,222,128,.06);
+      border: 1px solid rgba(74,222,128,.2);
+      border-radius: var(--radius); padding: 13px 18px;
+      font-size: 13px; color: var(--green); margin-bottom: 10px;
     }
     .payment-note2 {
-      background: rgba(0,180,216,.07);
-      border: 1px solid rgba(0,180,216,.2);
-      border-radius: var(--radius);
-      padding: 14px 18px; margin-top: 12px;
-      font-size: 13px; color: var(--teal);
-      font-family: var(--mono);
+      background: rgba(78,201,240,.06);
+      border: 1px solid rgba(78,201,240,.2);
+      border-radius: var(--radius); padding: 13px 18px;
+      font-size: 13px; color: var(--accent);
     }
 
-    /* ─── NOTES ─── */
+    /* ── NOTES ── */
+    .notes-section { background: var(--bg2); }
     .notes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
     .note-card {
-      background: var(--ink2);
+      display: flex; gap: 16px;
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      display: flex; gap: 14px;
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
       transition: border-color .2s;
     }
-    .note-card:hover { border-color: var(--teal); }
-    .note-num {
-      font-family: var(--mono); font-size: 12px;
-      color: var(--teal);
-      flex-shrink: 0; margin-top: 2px;
-      width: 28px;
+    @media (prefers-color-scheme: light) {
+      .note-card { background: var(--bg3); }
     }
-    .note-text { font-size: 14px; color: var(--text2); }
+    .note-card:hover { border-color: var(--accent); }
+    .note-num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: rgba(78,201,240,.12);
+      color: var(--accent); font-size: 12px; font-weight: 800;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .note-text { font-size: 14px; color: var(--text2); line-height: 1.7; }
 
-    /* ─── ORGANIZERS ─── */
+    /* ── ORGANIZERS ── */
+    .org-section { background: var(--bg); }
     .org-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
     .org-card {
-      background: var(--ink2);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px 20px;
-      transition: border-color .2s;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      text-align: center;
     }
-    .org-card.main { border-top: 2px solid var(--teal); }
-    .org-card.co   { border-top: 2px solid var(--muted); }
-    .org-card:hover { border-color: var(--teal); }
+    .org-card.main { border-top: 3px solid var(--accent); }
+    .org-card.co { border-top: 3px solid var(--accent2); }
     .org-type {
-      font-family: var(--mono); font-size: 11px; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: .18em;
+      text-transform: uppercase; margin-bottom: 10px;
     }
-    .org-name { font-weight: 700; font-size: 14px; color: var(--text); }
+    .org-card.main .org-type { color: var(--accent); }
+    .org-card.co .org-type { color: var(--accent2); }
+    .org-name { font-size: 15px; font-weight: 700; color: var(--text); }
 
-    /* ─── CONTACT ─── */
-    .contact { background: var(--ink2); }
+    /* ── CONTACT ── */
+    .contact-section { background: var(--bg2); }
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px; margin-top: 32px;
+      gap: 16px;
     }
     .contact-item {
-      background: var(--ink);
+      background: var(--bg);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      transition: border-color .2s;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: border-color .2s, transform .2s;
     }
-    .contact-item:hover { border-color: var(--teal); }
-    .c-icon { font-size: 24px; margin-bottom: 8px; }
-    .c-label { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
-    .c-val { font-weight: 700; font-size: 14px; }
-    .c-val a { color: var(--teal); text-decoration: none; }
+    @media (prefers-color-scheme: light) {
+      .contact-item { background: var(--bg3); }
+    }
+    .contact-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .c-icon { font-size: 26px; margin-bottom: 10px; }
+    .c-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+    }
+    .c-val { font-size: 14px; font-weight: 600; color: var(--text); }
+    .c-val a { color: var(--accent); text-decoration: none; }
     .c-val a:hover { text-decoration: underline; }
 
-    /* ─── FOOTER ─── */
+    /* ── FOOTER ── */
     footer {
-      background: var(--ink);
+      background: var(--bg);
       border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center; padding: 24px;
-      font-family: var(--mono); font-size: 12px;
+      color: var(--text2);
+      text-align: center; padding: 28px 20px;
+      font-size: 13px; line-height: 1.8;
     }
-    footer a { color: var(--teal); text-decoration: none; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .nav-links { display: none; }
+      .hero-stats { flex-direction: column; }
+      .hero-stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-stat:last-child { border-bottom: none; }
+      section { padding: 64px 0; }
+    }
   </style>
 </head>
 <body>
@@ -484,74 +476,77 @@
   </div>
 </nav>
 
-<!-- COUNTDOWN -->
+<!-- COUNTDOWN BAR -->
 <div class="countdown-bar">
-  ⏰ <span class="cd-label">超早鳥優惠倒數：</span><span id="countdown">計算中...</span><span class="cd-label">　｜　優惠截止：</span><strong>2026 年 7 月 11 日（六）</strong>
+  ⏰ 超早鳥優惠倒數：<span class="cd-count" id="countdown">計算中...</span>
+  <span class="cd-sep">|</span>
+  優惠截止：<strong>2026 年 7 月 11 日（六）</strong>
 </div>
 
 <!-- HERO -->
-<div class="hero circuit-bg">
-  <!-- decorative logic symbols -->
-  <div class="hero-logic-symbols" aria-hidden="true">
-    <span class="sym" style="top:8%;left:4%">∀x</span>
-    <span class="sym" style="top:15%;left:12%">∃y</span>
-    <span class="sym" style="top:5%;left:85%">P→Q</span>
-    <span class="sym" style="top:18%;right:8%">¬∅</span>
-    <span class="sym" style="bottom:12%;left:6%">⊢</span>
-    <span class="sym" style="bottom:20%;left:18%">∧∨</span>
-    <span class="sym" style="bottom:8%;right:10%">⊨</span>
-    <span class="sym" style="bottom:18%;right:20%">∈ℒ</span>
-    <span class="sym" style="top:40%;left:2%">IFF</span>
-    <span class="sym" style="top:55%;right:3%">⟹</span>
-    <span class="sym" style="top:30%;left:90%">∩∪</span>
-    <span class="sym" style="bottom:35%;left:92%">Σ*</span>
-  </div>
-
+<section class="hero">
+  <canvas id="starfield"></canvas>
   <div class="hero-content">
-    <div class="hero-tag">2026 · 語言奧林匹亞</div>
+    <div class="hero-eyebrow">
+      語言奧林匹亞<span>·</span>TAIWAN IOL<span>·</span>2026
+    </div>
     <h1>語言與<em>邏輯</em>的冒險</h1>
     <p class="hero-sub">
       在語言中找規律，在規律中練思考<br>
-      2026 Computational Linguistics Summer Camp (Introductory Level)
+      2026 Computational Linguistics Summer Camp · Introductory Level
     </p>
-    <div class="hero-meta">
-      <div class="hero-chip"><span class="icon">📅</span>2026 年 8 月 19–21 日</div>
-      <div class="hero-chip"><span class="icon">🎯</span>全國國中生以上（含小六畢業生）</div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-label">日期</div>
+        <div class="stat-val">8 月 19–21 日</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-label">地點</div>
+        <div class="stat-val">國立臺灣大學</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-label">對象</div>
+        <div class="stat-val">國中生以上（含小六畢業生）</div>
+      </div>
     </div>
     <div class="hero-btns">
       <a href="https://forms.gle/WFuu3ww8dzLTyEiQ8" target="_blank" class="btn-primary">✏️ 立即報名</a>
       <a href="https://drive.google.com/file/d/1ZZMFYUcXbidO5wfKiT93zHnouFO33Dm2/view?usp=sharing" target="_blank" class="btn-secondary">📄 活動簡章</a>
     </div>
   </div>
-</div>
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
 
 <!-- HIGHLIGHTS -->
 <section class="highlights" id="highlights">
   <div class="container">
-    <div class="section-eyebrow">features</div>
-    <div class="section-title">精彩活動亮點</div>
-    <p class="section-sub">四大主題模組，系統化探索語言運作的底層邏輯</p>
+    <div class="section-eyebrow fade-in">FEATURES</div>
+    <div class="section-title fade-in">精彩活動亮點</div>
+    <p class="section-sub fade-in">四大主題模組，系統化探索語言運作的底層邏輯</p>
     <div class="highlights-grid">
-      <div class="highlight-card">
-        <div class="hi-num">01</div>
+      <div class="highlight-card fade-in">
+        <div class="hi-num">MODULE 01</div>
         <div class="hi-icon">🎧</div>
         <div class="hi-title">聲音的隱形密碼</div>
         <div class="hi-desc">用聽覺破解語言的秘密，探索語音系統背後的規律結構</div>
       </div>
-      <div class="highlight-card">
-        <div class="hi-num">02</div>
+      <div class="highlight-card fade-in">
+        <div class="hi-num">MODULE 02</div>
         <div class="hi-icon">🧩</div>
         <div class="hi-title">句子疊疊樂</div>
         <div class="hi-desc">把世界語言折開再拼回去，感受語法結構的無窮變化</div>
       </div>
-      <div class="highlight-card">
-        <div class="hi-num">03</div>
+      <div class="highlight-card fade-in">
+        <div class="hi-num">MODULE 03</div>
         <div class="hi-icon">🔐</div>
         <div class="hi-title">破譯時刻</div>
         <div class="hi-desc">實戰解謎，燒腦挑戰語言密碼，體驗語言奧林匹亞競賽氛圍</div>
       </div>
-      <div class="highlight-card">
-        <div class="hi-num">04</div>
+      <div class="highlight-card fade-in">
+        <div class="hi-num">MODULE 04</div>
         <div class="hi-icon">🏆</div>
         <div class="hi-title">國手生存指南</div>
         <div class="hi-desc">學長姊不藏私，選拔眉角全公開，帶你衝進語言奧林匹亞</div>
@@ -561,15 +556,15 @@
 </section>
 
 <!-- SCHEDULE -->
-<section id="schedule">
+<section class="schedule-section" id="schedule">
   <div class="container">
-    <div class="section-eyebrow">schedule</div>
-    <div class="section-title">三日課程表</div>
-    <p class="section-sub">2026 年 8 月 19 日（三）至 21 日（五）</p>
-    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--ink2);border:1px solid var(--border);border-radius:4px;padding:8px 16px;margin-bottom:24px;font-family:var(--mono);font-size:13px;color:var(--text2);">
-      <span style="color:var(--teal)">📍</span> 國立臺灣大學 文學院演講廳
+    <div class="section-eyebrow fade-in">PROGRAM SCHEDULE</div>
+    <div class="section-title fade-in">三日課程表</div>
+    <p class="section-sub fade-in">2026 年 8 月 19 日（三）至 21 日（五）</p>
+    <div class="venue-tag fade-in">
+      <span>📍</span> 國立臺灣大學 文學院演講廳
     </div>
-    <div class="schedule-wrap">
+    <div class="schedule-wrap fade-in">
       <table>
         <thead>
           <tr>
@@ -614,24 +609,24 @@
 </section>
 
 <!-- PRICING -->
-<section class="pricing" id="pricing">
+<section class="pricing-section" id="pricing">
   <div class="container">
-    <div class="section-eyebrow">pricing</div>
-    <div class="section-title">報名費用</div>
-    <p class="section-sub">超早鳥截止 2026/07/11，揪團四人一起來最划算</p>
+    <div class="section-eyebrow fade-in">PRICING</div>
+    <div class="section-title fade-in">報名費用</div>
+    <p class="section-sub fade-in">超早鳥截止 2026/07/11，揪團四人一起來最划算</p>
 
-    <div class="early-note">
+    <div class="early-note fade-in">
       ⚡ 超早鳥截止：2026 年 7 月 11 日　｜　一般報名截止：2026 年 8 月 7 日　｜　名額有限，依完成繳費順序錄取
     </div>
 
-    <div class="pricing-table-wrap">
+    <div class="pricing-table-wrap fade-in">
       <table>
         <thead>
           <tr>
             <th style="text-align:left">身份別</th>
             <th>四人團報（每隊）</th>
-            <th>個人超早鳥<br><small style="font-weight:400;color:var(--muted)">7/11 前</small></th>
-            <th>一般原價<br><small style="font-weight:400;color:var(--muted)">7/12 起</small></th>
+            <th>個人超早鳥<br><small style="font-weight:400;opacity:.7">7/11 前</small></th>
+            <th>一般原價<br><small style="font-weight:400;opacity:.7">7/12 起</small></th>
           </tr>
         </thead>
         <tbody>
@@ -648,7 +643,7 @@
               <span class="badge-early">EARLY</span>
             </td>
             <td>
-              <div class="price-tag" style="color:var(--muted)">$6,800</div>
+              <div class="price-tag" style="color:var(--text2)">$6,800</div>
               <span class="price-unit">每人</span>
             </td>
           </tr>
@@ -665,7 +660,7 @@
               <span class="badge-early">EARLY</span>
             </td>
             <td>
-              <div class="price-tag" style="color:var(--muted)">$6,000</div>
+              <div class="price-tag" style="color:var(--text2)">$6,000</div>
               <span class="price-unit">每人</span>
             </td>
           </tr>
@@ -682,7 +677,7 @@
               <span class="badge-early">EARLY</span>
             </td>
             <td>
-              <div class="price-tag" style="color:var(--muted)">$4,500</div>
+              <div class="price-tag" style="color:var(--text2)">$4,500</div>
               <span class="price-unit">每人</span>
             </td>
           </tr>
@@ -690,11 +685,8 @@
       </table>
     </div>
 
-    <p style="font-size:13px;color:var(--muted);margin-bottom:28px">
-      偏鄉生認定依「偏鄉地區一覽表」，含花蓮、臺東、離島；中南部依國家發展委員會標準。
-    </p>
-
-    <div class="pricing-btns">
+    <p class="pricing-note fade-in">偏鄉生認定依「偏鄉地區一覽表」，含花蓮、臺東、離島；中南部依國家發展委員會標準。</p>
+    <div class="pricing-btns fade-in">
       <a href="https://forms.gle/WFuu3ww8dzLTyEiQ8" target="_blank" class="btn-primary">✏️ 前往報名表單</a>
       <a href="https://drive.google.com/file/d/1ZZMFYUcXbidO5wfKiT93zHnouFO33Dm2/view?usp=sharing" target="_blank" class="btn-secondary">📄 下載活動簡章</a>
     </div>
@@ -702,78 +694,75 @@
 </section>
 
 <!-- PAYMENT -->
-<section id="payment">
+<section class="payment-section" id="payment">
   <div class="container">
-    <div class="section-eyebrow">payment</div>
-    <div class="section-title">繳費資訊</div>
-    <p class="section-sub">匯款完成後請填寫匯款資訊並上傳收據以完成報名</p>
-    <div class="payment-box">
+    <div class="section-eyebrow fade-in">PAYMENT</div>
+    <div class="section-title fade-in">繳費資訊</div>
+    <p class="section-sub fade-in">匯款完成後請填寫匯款資訊並上傳收據以完成報名</p>
+    <div class="payment-box fade-in">
       <div class="payment-row">
         <div class="payment-label">銀行</div>
         <div class="payment-val">808 玉山銀行（E.SUN Bank）— 台大分行</div>
       </div>
       <div class="payment-row">
         <div class="payment-label">帳號</div>
-        <div class="payment-val mono">0624-940-151025</div>
+        <div class="payment-val mono">0624–940–151025</div>
       </div>
       <div class="payment-row">
         <div class="payment-label">戶名</div>
         <div class="payment-val">台灣語言文化與資訊協會</div>
       </div>
     </div>
-    <div class="payment-note">
+    <div class="payment-note fade-in">
       ✓ &nbsp;匯款完成後，請於報名表單填寫：匯款日期、帳號末五碼、匯款人姓名，並上傳匯款收據或轉帳截圖。
     </div>
-    <div class="payment-note2">
+    <div class="payment-note2 fade-in">
       ℹ &nbsp;如需以無摺存款方式繳費，請在報名的時候上傳無摺存款的單據。
     </div>
   </div>
 </section>
 
 <!-- NOTES -->
-<section style="background:var(--ink2)">
+<section class="notes-section" id="notes">
   <div class="container">
-    <div class="section-eyebrow">notes</div>
-    <div class="section-title">注意事項</div>
-    <p class="section-sub">參加前請詳閱</p>
+    <div class="section-eyebrow fade-in">NOTES</div>
+    <div class="section-title fade-in">注意事項</div>
+    <p class="section-sub fade-in">參加前請詳閱以下事項</p>
     <div class="notes-grid">
-      <div class="note-card">
-        <div class="note-num">[01]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">01</div>
         <div class="note-text">請自備個人文具、電子產品、水壺及其他常備藥品</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[02]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">02</div>
         <div class="note-text">若有過敏或醫療需求，請於報名時告知主辦單位</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[03]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">03</div>
         <div class="note-text">活動期間全程謝絕旁聽及錄影，以維護學習品質</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[04]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">04</div>
         <div class="note-text">主辦單位保有課程內容變動之權益，若有調整將即時公告</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[05]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">05</div>
         <div class="note-text">團隊報名需選出一名代表；成員退出將改以個人原價計算</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[06]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">06</div>
         <div class="note-text">退費申請截止：8/12 中午 12:00 前以 Email 向主辦方提出，三至五個工作日處理</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[07]</div>
-        <div class="note-text">
-          <strong style="color:var(--amber)">小六生報名者：</strong>
-          請在報名表上傳一張照片，內容需包含小孩本人，且能清楚辨識就讀國中學校名稱
-        </div>
+      <div class="note-card fade-in">
+        <div class="note-num">07</div>
+        <div class="note-text"><strong style="color:var(--amber)">小六生報名者：</strong>請在報名表上傳一張照片，內容需包含小孩本人，且能清楚辨識就讀國中學校名稱</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[08]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">08</div>
         <div class="note-text">活動三天均會供應午餐，亦可選擇外出用餐</div>
       </div>
-      <div class="note-card">
-        <div class="note-num">[09]</div>
+      <div class="note-card fade-in">
+        <div class="note-num">09</div>
         <div class="note-text">如需請假，請以 Email 告知主辦單位即可；請假日的課程無提供任何方式補課</div>
       </div>
     </div>
@@ -781,26 +770,26 @@
 </section>
 
 <!-- ORGANIZERS -->
-<section id="org">
+<section class="org-section" id="org">
   <div class="container">
-    <div class="section-eyebrow">organizers</div>
-    <div class="section-title">主協辦單位</div>
-    <p class="section-sub">由語言學領域頂尖機構共同舉辦</p>
+    <div class="section-eyebrow fade-in">ORGANIZERS</div>
+    <div class="section-title fade-in">主協辦單位</div>
+    <p class="section-sub fade-in">由語言學領域頂尖機構共同舉辦</p>
     <div class="org-grid">
-      <div class="org-card main">
-        <div class="org-type">// 主辦</div>
+      <div class="org-card main fade-in">
+        <div class="org-type">主辦單位</div>
         <div class="org-name">國立臺灣大學語言學研究所</div>
       </div>
-      <div class="org-card main">
-        <div class="org-type">// 主辦</div>
+      <div class="org-card main fade-in">
+        <div class="org-type">主辦單位</div>
         <div class="org-name">臺灣語言學文化與資訊協會</div>
       </div>
-      <div class="org-card co">
-        <div class="org-type">// 協辦</div>
+      <div class="org-card co fade-in">
+        <div class="org-type">協辦單位</div>
         <div class="org-name">國立臺灣大學文學院</div>
       </div>
-      <div class="org-card co">
-        <div class="org-type">// 協辦</div>
+      <div class="org-card co fade-in">
+        <div class="org-type">協辦單位</div>
         <div class="org-name">臺灣語言學學會</div>
       </div>
     </div>
@@ -808,30 +797,30 @@
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section class="contact-section" id="contact">
   <div class="container">
-    <div class="section-eyebrow">contact</div>
-    <div class="section-title">聯絡我們</div>
-    <p class="section-sub">有任何問題，歡迎隨時聯繫</p>
+    <div class="section-eyebrow fade-in">CONTACT</div>
+    <div class="section-title fade-in">聯絡我們</div>
+    <p class="section-sub fade-in">有任何問題，歡迎隨時聯繫</p>
     <div class="contact-grid">
-      <div class="contact-item">
+      <div class="contact-item fade-in">
         <div class="c-icon">📞</div>
-        <div class="c-label">tel</div>
+        <div class="c-label">電話</div>
         <div class="c-val">02-3366-4105 何小姐</div>
       </div>
-      <div class="contact-item">
+      <div class="contact-item fade-in">
         <div class="c-icon">✉️</div>
-        <div class="c-label">email</div>
+        <div class="c-label">Email</div>
         <div class="c-val"><a href="mailto:ioltwtwiol@gmail.com">ioltwtwiol@gmail.com</a></div>
       </div>
-      <div class="contact-item">
+      <div class="contact-item fade-in">
         <div class="c-icon">🕐</div>
-        <div class="c-label">hours</div>
-        <div class="c-val" style="font-size:13px">週一至週五 09:00–17:00<br><span style="color:var(--muted);font-size:12px">午休 12:00–13:30</span></div>
+        <div class="c-label">服務時間</div>
+        <div class="c-val" style="font-size:13px">週一至週五 09:00–17:00<br><span style="color:var(--text2);font-size:12px;font-weight:400">午休 12:00–13:30</span></div>
       </div>
-      <div class="contact-item">
+      <div class="contact-item fade-in">
         <div class="c-icon">📍</div>
-        <div class="c-label">venue</div>
+        <div class="c-label">活動地點</div>
         <div class="c-val" style="font-size:13px">國立臺灣大學<br>文學院演講廳</div>
       </div>
     </div>
@@ -839,33 +828,96 @@
 </section>
 
 <footer>
-  © 2026 台灣語言文化與資訊協會 · 國立臺灣大學語言學研究所 ·
-  <a href="mailto:ioltwtwiol@gmail.com">ioltwtwiol@gmail.com</a>
+  <p>© 2026 台灣語言文化與資訊協會 · 國立臺灣大學語言學研究所</p>
+  <p style="margin-top:6px"><a href="mailto:ioltwtwiol@gmail.com">ioltwtwiol@gmail.com</a></p>
 </footer>
 
 <script>
-  // Countdown
-  function tick() {
-    const deadline = new Date('2026-07-11T23:59:59+08:00');
-    const diff = deadline - new Date();
-    if (diff <= 0) { document.getElementById('countdown').textContent = '"EXPIRED"'; return; }
-    const d = Math.floor(diff/86400000);
-    const h = Math.floor(diff%86400000/3600000);
-    const m = Math.floor(diff%3600000/60000);
-    const s = Math.floor(diff%60000/1000);
-    document.getElementById('countdown').textContent =
-      `${d} 天 ${String(h).padStart(2,'0')} 時 ${String(m).padStart(2,'0')} 分 ${String(s).padStart(2,'0')} 秒`;
-  }
-  tick(); setInterval(tick, 1000);
+/* ── STARFIELD ── */
+(function() {
+  const canvas = document.getElementById('starfield');
+  const ctx = canvas.getContext('2d');
+  let stars = [];
+  const N = 120;
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const el = document.querySelector(a.getAttribute('href'));
-      if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function init() {
+    resize();
+    stars = [];
+    for (let i = 0; i < N; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.6 + 0.3,
+        a: Math.random(),
+        da: (Math.random() - 0.5) * 0.006,
+        dx: (Math.random() - 0.5) * 0.12,
+        dy: (Math.random() - 0.5) * 0.06,
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(s => {
+      s.x = (s.x + s.dx + canvas.width)  % canvas.width;
+      s.y = (s.y + s.dy + canvas.height) % canvas.height;
+      s.a += s.da;
+      if (s.a < 0.1 || s.a > 1) s.da *= -1;
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(150,210,255,${Math.abs(s.a)})`;
+      ctx.fill();
     });
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', init);
+  init();
+  draw();
+})();
+
+/* ── COUNTDOWN ── */
+function tick() {
+  const deadline = new Date('2026-07-11T23:59:59+08:00');
+  const diff = deadline - new Date();
+  if (diff <= 0) { document.getElementById('countdown').textContent = '優惠已結束'; return; }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor(diff % 86400000 / 3600000);
+  const m = Math.floor(diff % 3600000 / 60000);
+  const s = Math.floor(diff % 60000 / 1000);
+  document.getElementById('countdown').textContent =
+    `${d} 天 ${String(h).padStart(2,'0')} 時 ${String(m).padStart(2,'0')} 分 ${String(s).padStart(2,'0')} 秒`;
+}
+tick(); setInterval(tick, 1000);
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const el = document.querySelector(a.getAttribute('href'));
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+});
+
+/* ── FADE-IN ON SCROLL ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade-in').forEach((el, i) => {
+  el.style.transitionDelay = (i % 5) * 0.07 + 's';
+  observer.observe(el);
+});
 </script>
 </body>
 </html>
