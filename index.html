@@ -17,7 +17,7 @@
   <meta name="twitter:description" content="國中生以上語言奧林匹亞夏令營，8/19–21 台大，超早鳥優惠至 7/11！" />
 
   <style>
-    /* ── LOGIC THEME VARIABLES ── */
+    /* ── LOGIC THEME VARIABLES — DARK (default) ── */
     :root {
       --ink:      #0d1117;
       --ink2:     #161b22;
@@ -34,6 +34,31 @@
       --card:     #161b22;
       --radius:   6px;
       --mono:     'Courier New', 'Menlo', monospace;
+      --nav-bg:   rgba(13,17,23,0.92);
+      --grid-line: rgba(0,180,216,.06);
+      --sym-color: rgba(0,180,216,.15);
+    }
+
+    /* ── LIGHT MODE ── */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --ink:      #ffffff;
+        --ink2:     #f6f8fa;
+        --ink3:     #eaeef2;
+        --border:   #d0d7de;
+        --teal:     #0969da;
+        --teal-dim: #0550ae;
+        --lime:     #1a7f37;
+        --amber:    #9a6700;
+        --red:      #cf222e;
+        --muted:    #656d76;
+        --text:     #1f2328;
+        --text2:    #57606a;
+        --card:     #ffffff;
+        --nav-bg:   rgba(255,255,255,0.92);
+        --grid-line: rgba(9,105,218,.05);
+        --sym-color: rgba(9,105,218,.12);
+      }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,15 +74,15 @@
     .circuit-bg {
       background-color: var(--ink);
       background-image:
-        linear-gradient(rgba(0,180,216,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,180,216,.04) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
       background-size: 40px 40px;
     }
 
     /* ─── NAV ─── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(13,17,23,0.92);
+      background: var(--nav-bg);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 0 24px;
@@ -107,8 +132,8 @@
     .hero-grid {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(0,180,216,.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,180,216,.06) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
       background-size: 48px 48px;
     }
     /* Corner dots */
@@ -166,7 +191,7 @@
     .hero-logic-symbols {
       position: absolute;
       font-family: var(--mono); font-size: 18px;
-      color: rgba(0,180,216,.15);
+      color: var(--sym-color);
       pointer-events: none;
       user-select: none;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -454,10 +479,7 @@
 
 <!-- COUNTDOWN -->
 <div class="countdown-bar">
-  <span class="cd-label">// EARLY_BIRD_DEADLINE → </span>
-  <span id="countdown">計算中...</span>
-  <span class="cd-label"> &nbsp;|&nbsp; deadline := </span>
-  <strong>2026/07/11</strong>
+  ⏰ <span class="cd-label">超早鳥優惠倒數：</span><span id="countdown">計算中...</span><span class="cd-label">　｜　優惠截止：</span><strong>2026 年 7 月 11 日（六）</strong>
 </div>
 
 <!-- HERO -->
@@ -487,7 +509,6 @@
     </p>
     <div class="hero-meta">
       <div class="hero-chip"><span class="icon">📅</span>2026 年 8 月 19–21 日</div>
-      <div class="hero-chip"><span class="icon">📍</span>國立臺灣大學 文學院演講廳</div>
       <div class="hero-chip"><span class="icon">🎯</span>全國國中生以上（含小六畢業生）</div>
     </div>
     <div class="hero-btns">
@@ -538,6 +559,9 @@
     <div class="section-eyebrow">schedule</div>
     <div class="section-title">三日課程表</div>
     <p class="section-sub">2026 年 8 月 19 日（三）至 21 日（五）</p>
+    <div style="display:inline-flex;align-items:center;gap:8px;background:var(--ink2);border:1px solid var(--border);border-radius:4px;padding:8px 16px;margin-bottom:24px;font-family:var(--mono);font-size:13px;color:var(--text2);">
+      <span style="color:var(--teal)">📍</span> 國立臺灣大學 文學院演講廳
+    </div>
     <div class="schedule-wrap">
       <table>
         <thead>
@@ -823,7 +847,7 @@
     const m = Math.floor(diff%3600000/60000);
     const s = Math.floor(diff%60000/1000);
     document.getElementById('countdown').textContent =
-      `"${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s"`;
+      `${d} 天 ${String(h).padStart(2,'0')} 時 ${String(m).padStart(2,'0')} 分 ${String(s).padStart(2,'0')} 秒`;
   }
   tick(); setInterval(tick, 1000);
 
