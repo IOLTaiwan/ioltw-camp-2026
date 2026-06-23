@@ -55,12 +55,28 @@
       }
     }
 
+    /* ── WEB FONT: 源樣黑體 TW ── */
+    @font-face {
+      font-family: 'GenYoGothicTW';
+      font-style: normal;
+      font-weight: 100 500;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/gh/ButTaiwan/genyog-font@master/otf/TW/GenYoGothic2TW-R.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'GenYoGothicTW';
+      font-style: normal;
+      font-weight: 600 900;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/gh/ButTaiwan/genyog-font@master/otf/TW/GenYoGothic2TW-B.otf') format('opentype');
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', 'PingFang TC', 'Segoe UI', sans-serif;
+      font-family: 'GenYoGothicTW', '源樣黑體', 'PingFang TC', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.75;
