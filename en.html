@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2026年語奧初階夏季邏輯營 | 語言與邏輯的冒險 — 國立臺灣大學</title>
-  <meta name="description" content="2026年語奧初階夏季邏輯營，8月19–21日於國立臺灣大學文學院演講廳舉辦。專為國中生以上設計，透過語音分析、句法解謎、邏輯推理課程，帶你踏上語言奧林匹亞之旅。超早鳥優惠至7/11，立即報名！" />
-  <meta name="keywords" content="語言奧林匹亞,語奧,夏令營,邏輯,語言學,高中生,國中生,2026,語言謎題,IOL,linguistics olympiad,台灣,NTU,臺灣大學,語言學夏令營" />
-  <meta name="author" content="臺灣語言文化與資訊協會" />
+  <title>2026 IOL Introductory Summer Logic Camp | An Adventure in Language &amp; Logic — NTU</title>
+  <meta name="description" content="2026 IOL Introductory Summer Logic Camp, Aug 19–21 at NTU College of Liberal Arts. Designed for junior high students and above. Phonology, syntax, logic puzzles — your gateway to the Linguistics Olympiad. Early bird until Jul 11!" />
+  <meta name="keywords" content="Linguistics Olympiad,IOL,summer camp,logic,linguistics,Taiwan,NTU,2026,language puzzles,Taiwan IOL" />
+  <meta name="author" content="Taiwan Association of Linguistics, Language and Culture" />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="2026年語奧初階夏季邏輯營 | 語言與邏輯的冒險" />
-  <meta property="og:description" content="專為國中生以上設計的語言奧林匹亞夏令營，8/19–21 國立臺灣大學。超早鳥優惠至 7/11！" />
-  <meta property="og:locale" content="zh_TW" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="2026年語奧初階夏季邏輯營" />
-  <meta name="twitter:description" content="國中生以上語言奧林匹亞夏令營，8/19–21 台大，超早鳥優惠至 7/11！" />
+  <meta property="og:title" content="2026 IOL Introductory Summer Logic Camp | Language &amp; Logic Adventure" />
+  <meta property="og:description" content="Linguistics Olympiad summer camp for junior high students and above, Aug 19–21 at NTU. Early bird until Jul 11!" />
+  <meta property="og:locale" content="en_US" />
 
   <style>
     /* ── VARIABLES — DARK (default) ── */
@@ -35,8 +32,6 @@
       --radius-lg:16px;
       --shadow:   0 4px 24px rgba(0,0,0,.35);
     }
-
-    /* ── LIGHT MODE ── */
     @media (prefers-color-scheme: light) {
       :root {
         --bg:       #f5f7fa;
@@ -54,16 +49,11 @@
         --shadow:   0 4px 24px rgba(0,60,120,.08);
       }
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', 'PingFang TC', 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.75;
     }
 
     /* ── NAV ── */
@@ -79,10 +69,7 @@
       display: flex; align-items: center; justify-content: space-between;
       height: 58px;
     }
-    .nav-logo {
-      font-size: 15px; font-weight: 700;
-      color: var(--accent); letter-spacing: .01em;
-    }
+    .nav-logo { font-size: 15px; font-weight: 700; color: var(--accent); letter-spacing: .01em; }
     .nav-links { display: flex; gap: 6px; }
     .nav-links a {
       font-size: 14px; color: var(--text2); font-weight: 500;
@@ -119,9 +106,7 @@
       background: radial-gradient(ellipse at 60% 40%, #0f2a50 0%, #0a1628 60%);
       padding-top: 120px;
     }
-    #starfield {
-      position: absolute; inset: 0; pointer-events: none;
-    }
+    #starfield { position: absolute; inset: 0; pointer-events: none; }
     .hero-content {
       position: relative; z-index: 2;
       text-align: center; max-width: 760px; padding: 0 28px;
@@ -135,8 +120,7 @@
     .hero h1 {
       font-size: clamp(36px, 6vw, 68px);
       font-weight: 800; line-height: 1.15;
-      color: #fff; letter-spacing: -.01em;
-      margin-bottom: 18px;
+      color: #fff; letter-spacing: -.01em; margin-bottom: 18px;
     }
     .hero h1 em {
       font-style: normal;
@@ -154,21 +138,11 @@
       overflow: hidden; margin-bottom: 40px;
       background: rgba(255,255,255,.08);
     }
-    .hero-stat {
-      flex: 1; padding: 20px 24px; text-align: center;
-      border-right: 1px solid rgba(100,160,230,.25);
-    }
+    .hero-stat { flex: 1; padding: 20px 24px; text-align: center; border-right: 1px solid rgba(100,160,230,.25); }
     .hero-stat:last-child { border-right: none; }
-    .stat-label {
-      font-size: 12px; font-weight: 700; letter-spacing: .15em;
-      text-transform: uppercase; color: #7dd8f8; margin-bottom: 8px;
-    }
-    .stat-val {
-      font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3;
-    }
-    .hero-btns {
-      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
-    }
+    .stat-label { font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #7dd8f8; margin-bottom: 8px; }
+    .stat-val { font-size: 17px; font-weight: 700; color: #fff; line-height: 1.3; }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--accent); color: #0a1628;
@@ -186,7 +160,6 @@
       transition: border-color .2s, background .2s, transform .2s;
     }
     .btn-secondary:hover { border-color: var(--accent); background: rgba(78,201,240,.06); transform: translateY(-1px); }
-
     .scroll-hint {
       position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
       color: var(--text2); font-size: 11px; letter-spacing: .15em;
@@ -206,51 +179,24 @@
     /* ── SECTION SHARED ── */
     section { padding: 88px 0; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
-    .section-eyebrow {
-      font-size: 11px; font-weight: 700; letter-spacing: .2em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800; color: var(--text); line-height: 1.2;
-      margin-bottom: 12px;
-    }
-    .section-sub {
-      font-size: 16px; color: var(--text2); margin-bottom: 52px;
-    }
-
-    /* ── FADE-IN ON SCROLL ── */
-    .fade-in {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
+    .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 12px; }
+    .section-sub { font-size: 16px; color: var(--text2); margin-bottom: 52px; }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
 
-    /* ── HIGHLIGHTS (alt bg) ── */
+    /* ── HIGHLIGHTS ── */
     .highlights { background: var(--bg2); }
-    .highlights-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+    .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
     .highlight-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--accent);
-      border-radius: var(--radius-lg);
-      padding: 28px 24px;
-      transition: transform .2s, box-shadow .2s;
+      background: var(--bg); border: 1px solid var(--border);
+      border-top: 3px solid var(--accent); border-radius: var(--radius-lg);
+      padding: 28px 24px; transition: transform .2s, box-shadow .2s;
     }
-    @media (prefers-color-scheme: light) {
-      .highlight-card { background: var(--bg3); }
-    }
+    @media (prefers-color-scheme: light) { .highlight-card { background: var(--bg3); } }
     .highlight-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
     .hi-icon { font-size: 32px; margin-bottom: 14px; }
-    .hi-num {
-      font-size: 11px; font-weight: 700; letter-spacing: .15em;
-      color: var(--accent); text-transform: uppercase; margin-bottom: 8px;
-    }
+    .hi-num { font-size: 11px; font-weight: 700; letter-spacing: .15em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
     .hi-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
     .hi-desc { font-size: 14px; color: var(--text2); line-height: 1.7; }
 
@@ -260,21 +206,15 @@
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--bg2); border: 1px solid var(--border);
       border-radius: 6px; padding: 8px 16px;
-      font-size: 13px; color: var(--text2);
-      margin-bottom: 28px;
+      font-size: 13px; color: var(--text2); margin-bottom: 28px;
     }
     .venue-tag span { color: var(--accent); }
     .schedule-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); }
-    .schedule-wrap table {
-      width: 100%; border-collapse: collapse;
-      font-size: 14px; min-width: 580px;
-    }
+    .schedule-wrap table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 580px; }
     .schedule-wrap th {
-      background: #CCEEFF;
-      color: #AAFFEE; font-size: 12px;
+      background: #CCEEFF; color: #AAFFEE; font-size: 12px;
       font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-      padding: 14px 16px; text-align: center;
-      border: 1px solid var(--border);
+      padding: 14px 16px; text-align: center; border: 1px solid var(--border);
     }
     .schedule-wrap th:first-child { text-align: center; }
     .schedule-wrap td {
@@ -291,10 +231,8 @@
     /* ── PRICING ── */
     .pricing-section { background: var(--bg2); }
     .early-note {
-      background: rgba(246,201,14,.07);
-      border: 1px solid rgba(246,201,14,.25);
-      border-radius: var(--radius);
-      padding: 14px 20px; margin-bottom: 28px;
+      background: rgba(246,201,14,.07); border: 1px solid rgba(246,201,14,.25);
+      border-radius: var(--radius); padding: 14px 20px; margin-bottom: 28px;
       font-size: 14px; color: var(--amber);
     }
     .pricing-table-wrap { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 24px; }
@@ -304,16 +242,12 @@
     .pricing-table-wrap table th:nth-child(3) { width: 23%; }
     .pricing-table-wrap table th:nth-child(4) { width: 23%; }
     .pricing-table-wrap th {
-      background: var(--bg3);
-      color: var(--text2); font-size: 13px; font-weight: 700;
+      background: var(--bg3); color: var(--text2); font-size: 13px; font-weight: 700;
       letter-spacing: .04em; padding: 14px 16px; text-align: center;
       border-bottom: 1px solid var(--border);
     }
     .pricing-table-wrap th:first-child { text-align: left; }
-    .pricing-table-wrap td {
-      padding: 16px; text-align: center;
-      border-bottom: 1px solid var(--border); vertical-align: middle;
-    }
+    .pricing-table-wrap td { padding: 16px; text-align: center; border-bottom: 1px solid var(--border); vertical-align: middle; }
     .pricing-table-wrap tr:last-child td { border-bottom: none; }
     .pricing-table-wrap tr:hover td { background: rgba(78,201,240,.04); }
     .price-tag { font-size: 22px; font-weight: 800; color: var(--accent); }
@@ -330,128 +264,76 @@
 
     /* ── PAYMENT ── */
     .payment-section { background: var(--bg); }
-    .payment-box {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden; margin-bottom: 20px;
-    }
-    .payment-row {
-      display: flex; align-items: stretch;
-      border-bottom: 1px solid var(--border);
-    }
+    .payment-box { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 20px; }
+    .payment-row { display: flex; align-items: stretch; border-bottom: 1px solid var(--border); }
     .payment-row:last-child { border-bottom: none; }
     .payment-label {
-      width: 100px; flex-shrink: 0;
-      background: var(--bg2); color: var(--text2);
-      font-size: 13px; font-weight: 600;
-      padding: 16px 20px;
-      border-right: 1px solid var(--border);
-      display: flex; align-items: center;
+      width: 120px; flex-shrink: 0; background: var(--bg2); color: var(--text2);
+      font-size: 13px; font-weight: 600; padding: 16px 20px;
+      border-right: 1px solid var(--border); display: flex; align-items: center;
     }
-    .payment-val {
-      padding: 16px 20px; font-size: 15px; font-weight: 600;
-      color: var(--text); display: flex; align-items: center;
-    }
+    .payment-val { padding: 16px 20px; font-size: 15px; font-weight: 600; color: var(--text); display: flex; align-items: center; }
     .payment-val.mono { color: var(--accent); letter-spacing: .08em; }
     .payment-note {
-      background: rgba(74,222,128,.06);
-      border: 1px solid rgba(74,222,128,.2);
+      background: rgba(74,222,128,.06); border: 1px solid rgba(74,222,128,.2);
       border-radius: var(--radius); padding: 13px 18px;
       font-size: 13px; color: var(--green); margin-bottom: 10px;
     }
     .payment-note2 {
-      background: rgba(78,201,240,.06);
-      border: 1px solid rgba(78,201,240,.2);
+      background: rgba(78,201,240,.06); border: 1px solid rgba(78,201,240,.2);
       border-radius: var(--radius); padding: 13px 18px;
       font-size: 13px; color: var(--accent);
     }
 
     /* ── NOTES ── */
     .notes-section { background: var(--bg2); }
-    .notes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
+    .notes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
     .note-card {
-      display: flex; gap: 16px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 20px 22px;
-      transition: border-color .2s;
+      display: flex; gap: 16px; background: var(--bg);
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 20px 22px; transition: border-color .2s;
     }
-    @media (prefers-color-scheme: light) {
-      .note-card { background: var(--bg3); }
-    }
+    @media (prefers-color-scheme: light) { .note-card { background: var(--bg3); } }
     .note-card:hover { border-color: var(--accent); }
     .note-num {
-      flex-shrink: 0;
-      width: 28px; height: 28px;
-      background: rgba(78,201,240,.12);
-      color: var(--accent); font-size: 12px; font-weight: 800;
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 2px;
+      flex-shrink: 0; width: 28px; height: 28px;
+      background: rgba(78,201,240,.12); color: var(--accent);
+      font-size: 12px; font-weight: 800; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center; margin-top: 2px;
     }
     .note-text { font-size: 14px; color: var(--text2); line-height: 1.7; }
 
     /* ── ORGANIZERS ── */
     .org-section { background: var(--bg); }
-    .org-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .org-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      text-align: center;
-    }
+    .org-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .org-card { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; text-align: center; }
     .org-card.main { border-top: 3px solid var(--accent); }
     .org-card.co { border-top: 3px solid var(--accent2); }
-    .org-type {
-      font-size: 11px; font-weight: 700; letter-spacing: .18em;
-      text-transform: uppercase; margin-bottom: 10px;
-    }
+    .org-type { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 10px; }
     .org-card.main .org-type { color: var(--accent); }
     .org-card.co .org-type { color: var(--accent2); }
     .org-name { font-size: 15px; font-weight: 700; color: var(--text); }
 
     /* ── CONTACT ── */
     .contact-section { background: var(--bg2); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     .contact-item {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px;
       transition: border-color .2s, transform .2s;
     }
-    @media (prefers-color-scheme: light) {
-      .contact-item { background: var(--bg3); }
-    }
+    @media (prefers-color-scheme: light) { .contact-item { background: var(--bg3); } }
     .contact-item:hover { border-color: var(--accent); transform: translateY(-2px); }
     .c-icon { font-size: 26px; margin-bottom: 10px; }
-    .c-label {
-      font-size: 11px; font-weight: 700; letter-spacing: .15em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
-    }
+    .c-label { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
     .c-val { font-size: 14px; font-weight: 600; color: var(--text); }
     .c-val a { color: var(--accent); text-decoration: none; }
     .c-val a:hover { text-decoration: underline; }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      color: var(--text2);
-      text-align: center; padding: 28px 20px;
+      background: var(--bg); border-top: 1px solid var(--border);
+      color: var(--text2); text-align: center; padding: 28px 20px;
       font-size: 13px; line-height: 1.8;
     }
     footer a { color: var(--accent); text-decoration: none; }
@@ -472,23 +354,23 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-logo">2026年語奧初階夏季邏輯營</div>
+    <div class="nav-logo">2026 IOL Summer Logic Camp</div>
     <div class="nav-links">
-      <a href="#highlights">課程亮點</a>
-      <a href="#schedule">課程表</a>
-      <a href="#pricing">費用</a>
-      <a href="#payment">繳費</a>
-      <a href="#contact">聯絡</a>
-      <a href="en.html" class="lang-btn">EN</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#payment">Payment</a>
+      <a href="#contact">Contact</a>
+      <a href="index.html" class="lang-btn">中文</a>
     </div>
   </div>
 </nav>
 
 <!-- COUNTDOWN BAR -->
 <div class="countdown-bar">
-  ⏰ 超早鳥優惠倒數：<span class="cd-count" id="countdown">計算中...</span>
+  ⏰ Early Bird Countdown: <span class="cd-count" id="countdown">Calculating...</span>
   <span class="cd-sep">|</span>
-  優惠截止：<strong>2026 年 7 月 11 日（六）</strong>
+  Deadline: <strong>July 11, 2026 (Sat)</strong>
 </div>
 
 <!-- HERO -->
@@ -496,25 +378,25 @@
   <canvas id="starfield"></canvas>
   <div class="hero-content">
     <div class="hero-eyebrow">
-      語言奧林匹亞<span>·</span>TAIWAN IOL<span>·</span>2026
+      Linguistics Olympiad<span>·</span>TAIWAN IOL<span>·</span>2026
     </div>
-    <h1>語言與<em>邏輯</em>的冒險</h1>
+    <h1>An Adventure in Language &amp; <em>Logic</em></h1>
     <p class="hero-sub">
-      <span style="color:#AAFFEE">在語言中找規律，在規律中練思考</span><br>
+      <span style="color:#AAFFEE">Find patterns in language, sharpen thinking through rules</span><br>
       <span style="color:#AAFFEE">2026 Computational Linguistics Summer Camp · Introductory Level</span>
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="stat-label">日期</div>
-        <div class="stat-val">8 月 19–21 日</div>
+        <div class="stat-label">Date</div>
+        <div class="stat-val">Aug 19–21</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-label">地點</div>
-        <div class="stat-val">國立臺灣大學</div>
+        <div class="stat-label">Venue</div>
+        <div class="stat-val">National Taiwan University</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-label">對象</div>
-        <div class="stat-val">國中生以上<br><span style="font-size:10px">（含當年度小六畢業生）</span></div>
+        <div class="stat-label">Open To</div>
+        <div class="stat-val">Jr. High &amp; Above<br><span style="font-size:10px">(incl. graduating 6th-graders)</span></div>
       </div>
     </div>
   </div>
@@ -528,32 +410,32 @@
 <section class="highlights" id="highlights">
   <div class="container">
     <div class="section-eyebrow fade-in">FEATURES</div>
-    <div class="section-title fade-in">精彩活動亮點</div>
-    <p class="section-sub fade-in">四大主題模組，系統化探索語言運作的底層邏輯</p>
+    <div class="section-title fade-in">Program Highlights</div>
+    <p class="section-sub fade-in">Four thematic modules systematically exploring the underlying logic of language</p>
     <div class="highlights-grid">
       <div class="highlight-card fade-in">
         <div class="hi-num">MODULE 01</div>
         <div class="hi-icon">🎧</div>
-        <div class="hi-title">聲音的隱形密碼</div>
-        <div class="hi-desc">用聽覺破解語言的秘密，探索語音系統背後的規律結構</div>
+        <div class="hi-title">The Hidden Code of Sound</div>
+        <div class="hi-desc">Crack language secrets through listening — uncover the rules hidden inside phonological systems</div>
       </div>
       <div class="highlight-card fade-in">
         <div class="hi-num">MODULE 02</div>
         <div class="hi-icon">🧩</div>
-        <div class="hi-title">句子疊疊樂</div>
-        <div class="hi-desc">把世界語言折開再拼回去，感受語法結構的無窮變化</div>
+        <div class="hi-title">Sentence Stacking</div>
+        <div class="hi-desc">Disassemble and reassemble languages from around the world, feeling the infinite variety of grammatical structures</div>
       </div>
       <div class="highlight-card fade-in">
         <div class="hi-num">MODULE 03</div>
         <div class="hi-icon">🔐</div>
-        <div class="hi-title">破譯時刻</div>
-        <div class="hi-desc">實戰解謎，燒腦挑戰語言密碼，體驗語言奧林匹亞競賽氛圍</div>
+        <div class="hi-title">Decoding Hour</div>
+        <div class="hi-desc">Real puzzle-solving challenges — crack linguistic codes and experience the thrill of the Linguistics Olympiad</div>
       </div>
       <div class="highlight-card fade-in">
         <div class="hi-num">MODULE 04</div>
         <div class="hi-icon">🏆</div>
-        <div class="hi-title">國手生存指南</div>
-        <div class="hi-desc">學長姊不藏私，選拔眉角全公開，帶你衝進語言奧林匹亞</div>
+        <div class="hi-title">Olympian's Survival Guide</div>
+        <div class="hi-desc">Senior olympians share every secret — selection tips, strategies, and your path to the international IOL stage</div>
       </div>
     </div>
   </div>
@@ -563,54 +445,54 @@
 <section class="schedule-section" id="schedule">
   <div class="container">
     <div class="section-eyebrow fade-in">PROGRAM SCHEDULE</div>
-    <div class="section-title fade-in">活動課程表</div>
-    <p class="section-sub fade-in">2026 年 8 月 19 日（三）至 21 日（五）</p>
+    <div class="section-title fade-in">Activity Schedule</div>
+    <p class="section-sub fade-in">August 19 (Wed) – August 21 (Fri), 2026</p>
     <div class="venue-tag fade-in">
-      <span>📍</span> 國立臺灣大學 文學院演講廳
+      <span>📍</span> NTU College of Liberal Arts Auditorium, National Taiwan University
     </div>
     <div class="map-wrap fade-in" style="margin:20px 0 28px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);">
-      <iframe src="https://maps.google.com/maps?q=國立臺灣大學+文學院&output=embed&hl=zh-TW" width="100%" height="300" style="border:0;display:block;" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://maps.google.com/maps?q=National+Taiwan+University+College+of+Liberal+Arts&output=embed&hl=en" width="100%" height="300" style="border:0;display:block;" allowfullscreen loading="lazy"></iframe>
       <div style="padding:10px 14px;background:var(--bg2);text-align:right;">
-        <a href="https://maps.google.com/?q=國立臺灣大學文學院演講廳" target="_blank" rel="noopener" style="color:var(--accent);font-size:13px;font-weight:600;text-decoration:none;">📍 在 Google Maps 中查看 →</a>
+        <a href="https://maps.google.com/?q=NTU+College+of+Liberal+Arts+Auditorium+Taipei" target="_blank" rel="noopener" style="color:var(--accent);font-size:13px;font-weight:600;text-decoration:none;">📍 View on Google Maps →</a>
       </div>
     </div>
     <div class="schedule-wrap fade-in">
       <table>
         <thead>
           <tr>
-            <th>時間</th>
-            <th>08.19（三）</th>
-            <th>08.20（四）</th>
-            <th>08.21（五）</th>
+            <th>Time</th>
+            <th>Aug 19 (Wed)</th>
+            <th>Aug 20 (Thu)</th>
+            <th>Aug 21 (Fri)</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>10:00–10:30</td>
-            <td>語奧是啥東西？</td>
-            <td rowspan="2" class="td-highlight">句子疊疊樂</td>
-            <td>小組對抗賽</td>
+            <td>What is the IOL?</td>
+            <td rowspan="2" class="td-highlight">Sentence Stacking</td>
+            <td>Team Challenge</td>
           </tr>
           <tr>
             <td>10:30–12:30</td>
-            <td class="td-highlight">聲音的隱形密碼</td>
-            <td class="td-highlight">破譯時刻</td>
+            <td class="td-highlight">The Hidden Code of Sound</td>
+            <td class="td-highlight">Decoding Hour</td>
           </tr>
           <tr>
             <td>12:30–14:00</td>
-            <td colspan="3" class="td-break">午休 ＋ 小組任務（供應午餐）</td>
+            <td colspan="3" class="td-break">Lunch Break + Group Activity (Lunch provided)</td>
           </tr>
           <tr>
             <td>14:00–16:00</td>
-            <td>從語言看世界</td>
-            <td>他們為什麼這樣數？</td>
-            <td class="td-highlight">國手生存指南</td>
+            <td>Language &amp; the World</td>
+            <td>How Do They Count?</td>
+            <td class="td-highlight">Olympian's Survival Guide</td>
           </tr>
           <tr>
             <td>16:00–16:30</td>
-            <td class="td-end">賦歸</td>
-            <td class="td-end">賦歸</td>
-            <td class="td-end">結業式 ＋ 賦歸</td>
+            <td class="td-end">Farewell</td>
+            <td class="td-end">Farewell</td>
+            <td class="td-end">Closing Ceremony + Farewell</td>
           </tr>
         </tbody>
       </table>
@@ -622,83 +504,83 @@
 <section class="pricing-section" id="pricing">
   <div class="container">
     <div class="section-eyebrow fade-in">PRICING</div>
-    <div class="section-title fade-in">報名費用</div>
-    <p class="section-sub fade-in">超早鳥截止 2026/07/11，揪團四人一起來最划算</p>
+    <div class="section-title fade-in">Registration Fees</div>
+    <p class="section-sub fade-in">Early bird deadline Jul 11 — groups of 4 get the best deal</p>
 
     <div class="early-note fade-in">
-      ⚡ 超早鳥截止：2026 年 7 月 11 日　｜　一般報名截止：2026 年 8 月 7 日　｜　名額有限，依完成繳費順序錄取
+      ⚡ Early Bird Deadline: July 11, 2026 &nbsp;｜&nbsp; Regular Registration Deadline: August 7, 2026 &nbsp;｜&nbsp; Limited spots — first come, first served (by payment)
     </div>
 
     <div class="pricing-table-wrap fade-in">
       <table>
         <thead>
           <tr>
-            <th style="text-align:left">身份別</th>
-            <th>四人團報（每隊）</th>
-            <th>個人超早鳥<br><small style="font-weight:400;opacity:.7">7/11 前</small></th>
-            <th>一般原價<br><small style="font-weight:400;opacity:.7">7/12 起</small></th>
+            <th style="text-align:left">Category</th>
+            <th>Group of 4 (per team)</th>
+            <th>Early Bird<br><small style="font-weight:400;opacity:.7">by Jul 11</small></th>
+            <th>Regular Price<br><small style="font-weight:400;opacity:.7">from Jul 12</small></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="text-align:left;font-weight:700;color:var(--text)">一般生（北部）</td>
+            <td style="text-align:left;font-weight:700;color:var(--text)">General (Northern Taiwan)</td>
             <td>
               <div class="price-tag">$21,200</div>
-              <span class="price-unit">每隊 ／ 平均 $5,300／人</span>
-              <span class="price-save">↓ 省 $6,000！</span>
+              <span class="price-unit">per team / avg $5,300 per person</span>
+              <span class="price-save">↓ Save $6,000!</span>
             </td>
             <td>
               <div class="price-tag">$5,600</div>
-              <span class="price-unit">每人</span>
+              <span class="price-unit">per person</span>
               <span class="badge-early">EARLY</span>
             </td>
             <td>
               <div class="price-tag" style="color:var(--text2)">$6,800</div>
-              <span class="price-unit">每人</span>
+              <span class="price-unit">per person</span>
             </td>
           </tr>
           <tr>
-            <td style="text-align:left;font-weight:700;color:var(--text)">中南部學生</td>
+            <td style="text-align:left;font-weight:700;color:var(--text)">Central / Southern Taiwan</td>
             <td>
               <div class="price-tag">$18,000</div>
-              <span class="price-unit">每隊 ／ 平均 $4,500／人</span>
-              <span class="price-save">↓ 省 $6,000！</span>
+              <span class="price-unit">per team / avg $4,500 per person</span>
+              <span class="price-save">↓ Save $6,000!</span>
             </td>
             <td>
               <div class="price-tag">$4,800</div>
-              <span class="price-unit">每人</span>
+              <span class="price-unit">per person</span>
               <span class="badge-early">EARLY</span>
             </td>
             <td>
               <div class="price-tag" style="color:var(--text2)">$6,000</div>
-              <span class="price-unit">每人</span>
+              <span class="price-unit">per person</span>
             </td>
           </tr>
           <tr>
-            <td style="text-align:left;font-weight:700;color:var(--text)">偏鄉／弱勢生</td>
+            <td style="text-align:left;font-weight:700;color:var(--text)">Rural / Disadvantaged</td>
             <td>
               <div class="price-tag">$12,000</div>
-              <span class="price-unit">每隊 ／ 平均 $3,000／人</span>
-              <span class="price-save">↓ 省 $6,000！</span>
+              <span class="price-unit">per team / avg $3,000 per person</span>
+              <span class="price-save">↓ Save $6,000!</span>
             </td>
             <td>
               <div class="price-tag">$3,200</div>
-              <span class="price-unit">每人</span>
+              <span class="price-unit">per person</span>
               <span class="badge-early">EARLY</span>
             </td>
             <td>
               <div class="price-tag" style="color:var(--text2)">$4,500</div>
-              <span class="price-unit">每人</span>
+              <span class="price-unit">per person</span>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <p class="pricing-note fade-in">偏鄉生認定依「偏鄉地區一覽表」，含花蓮、臺東、離島；中南部依國家發展委員會標準。</p>
+    <p class="pricing-note fade-in">Rural classification follows Taiwan's official Remote Area List (including Hualien, Taitung, and outlying islands); Central/Southern Taiwan follows NDEV regional standards.</p>
     <div class="pricing-btns fade-in">
-      <a href="https://forms.gle/WFuu3ww8dzLTyEiQ8" target="_blank" class="btn-primary">✏️ 前往報名表單</a>
-      <a href="https://drive.google.com/file/d/1ZZMFYUcXbidO5wfKiT93zHnouFO33Dm2/view?usp=sharing" target="_blank" class="btn-secondary">📄 下載活動簡章</a>
+      <a href="https://forms.gle/WFuu3ww8dzLTyEiQ8" target="_blank" class="btn-primary">✏️ Register Now</a>
+      <a href="https://drive.google.com/file/d/1ZZMFYUcXbidO5wfKiT93zHnouFO33Dm2/view?usp=sharing" target="_blank" class="btn-secondary">📄 Download Brochure</a>
     </div>
   </div>
 </section>
@@ -707,27 +589,27 @@
 <section class="payment-section" id="payment">
   <div class="container">
     <div class="section-eyebrow fade-in">PAYMENT</div>
-    <div class="section-title fade-in">繳費資訊</div>
-    <p class="section-sub fade-in">匯款完成後請填寫匯款資訊並上傳收據以完成報名</p>
+    <div class="section-title fade-in">Payment Information</div>
+    <p class="section-sub fade-in">After transferring, please submit your payment details and upload your receipt to complete registration</p>
     <div class="payment-box fade-in">
       <div class="payment-row">
-        <div class="payment-label">銀行</div>
-        <div class="payment-val">808 玉山銀行（E.SUN Bank）— 台大分行</div>
+        <div class="payment-label">Bank</div>
+        <div class="payment-val">808 E.SUN Bank — NTU Branch</div>
       </div>
       <div class="payment-row">
-        <div class="payment-label">帳號</div>
+        <div class="payment-label">Account No.</div>
         <div class="payment-val mono">0624–940–151025</div>
       </div>
       <div class="payment-row">
-        <div class="payment-label">戶名</div>
-        <div class="payment-val">台灣語言文化與資訊協會</div>
+        <div class="payment-label">Account Name</div>
+        <div class="payment-val">Taiwan Association of Linguistics, Language and Culture</div>
       </div>
     </div>
     <div class="payment-note fade-in">
-      ✓ &nbsp;匯款完成後，請於報名表單填寫：匯款日期、帳號末五碼、匯款人姓名，並上傳匯款收據或轉帳截圖。
+      ✓ &nbsp;After transferring, please fill in the registration form with: transfer date, last 5 digits of your account, sender's name, and upload your transfer receipt or screenshot.
     </div>
     <div class="payment-note2 fade-in">
-      ℹ &nbsp;如需以無摺存款方式繳費，請在報名的時候上傳無摺存款的單據。
+      ℹ &nbsp;If paying via cash deposit (無摺存款), please upload the deposit slip when completing the registration form.
     </div>
   </div>
 </section>
@@ -736,40 +618,40 @@
 <section class="notes-section" id="notes">
   <div class="container">
     <div class="section-eyebrow fade-in">NOTES</div>
-    <div class="section-title fade-in">注意事項</div>
-    <p class="section-sub fade-in">參加前請詳閱以下事項</p>
+    <div class="section-title fade-in">Important Notes</div>
+    <p class="section-sub fade-in">Please read the following carefully before participating</p>
     <div class="notes-grid">
       <div class="note-card fade-in">
         <div class="note-num">01</div>
-        <div class="note-text">請自備個人文具、電子產品、水壺及其他常備藥品</div>
+        <div class="note-text">Please bring your own stationery, electronic devices, water bottle, and any personal medications</div>
       </div>
       <div class="note-card fade-in">
         <div class="note-num">02</div>
-        <div class="note-text">若有過敏或醫療需求，請於報名時告知主辦單位</div>
+        <div class="note-text">Please notify the organizers of any allergies or medical needs at the time of registration</div>
       </div>
       <div class="note-card fade-in">
         <div class="note-num">03</div>
-        <div class="note-text">活動期間全程謝絕旁聽及錄影，以維護學習品質</div>
+        <div class="note-text">Auditing and video recording are strictly prohibited during all sessions to maintain learning quality</div>
       </div>
       <div class="note-card fade-in">
         <div class="note-num">04</div>
-        <div class="note-text">主辦單位保有課程內容變動之權益，若有調整將即時公告</div>
+        <div class="note-text">Organizers reserve the right to modify course content; any changes will be announced promptly</div>
       </div>
       <div class="note-card fade-in">
         <div class="note-num">05</div>
-        <div class="note-text">團隊報名需選出一名代表；成員退出將改以個人原價計算</div>
+        <div class="note-text">Group registrations must designate one representative; members who withdraw will be charged at the individual regular rate</div>
       </div>
       <div class="note-card fade-in">
         <div class="note-num">06</div>
-        <div class="note-text">退費申請截止：8/12 中午 12:00 前以 Email 向主辦方提出，三至五個工作日處理</div>
+        <div class="note-text">Refund deadline: submit your request by email before 12:00 noon on Aug 12; processed within 3–5 business days</div>
       </div>
       <div class="note-card fade-in">
         <div class="note-num">07</div>
-        <div class="note-text"><strong style="color:var(--amber)">小六生報名者：</strong>請在報名表上傳一張照片，內容需包含小孩本人，且能清楚辨識就讀國中學校名稱</div>
+        <div class="note-text"><strong style="color:var(--amber)">For graduating 6th-graders:</strong> please upload a photo at registration showing the student and the name of their junior high school</div>
       </div>
       <div class="note-card fade-in">
         <div class="note-num">08</div>
-        <div class="note-text">如需請假，請以 Email 告知主辦單位即可；請假日的課程無提供任何方式補課</div>
+        <div class="note-text">For absences, simply notify the organizers by email; missed sessions cannot be made up in any form</div>
       </div>
     </div>
   </div>
@@ -779,24 +661,24 @@
 <section class="org-section" id="org">
   <div class="container">
     <div class="section-eyebrow fade-in">ORGANIZERS</div>
-    <div class="section-title fade-in">主協辦單位</div>
-    <p class="section-sub fade-in">由語言學領域頂尖機構共同舉辦</p>
+    <div class="section-title fade-in">Organizers &amp; Co-organizers</div>
+    <p class="section-sub fade-in">Jointly organized by leading linguistics institutions in Taiwan</p>
     <div class="org-grid">
       <div class="org-card main fade-in">
-        <div class="org-type">主辦單位</div>
-        <div class="org-name">國立臺灣大學語言學研究所</div>
+        <div class="org-type">Main Organizer</div>
+        <div class="org-name">Graduate Institute of Linguistics, National Taiwan University</div>
       </div>
       <div class="org-card main fade-in">
-        <div class="org-type">主辦單位</div>
-        <div class="org-name">臺灣語言學文化與資訊協會</div>
+        <div class="org-type">Main Organizer</div>
+        <div class="org-name">Taiwan Association of Linguistics, Language and Culture</div>
       </div>
       <div class="org-card co fade-in">
-        <div class="org-type">協辦單位</div>
-        <div class="org-name">國立臺灣大學文學院</div>
+        <div class="org-type">Co-organizer</div>
+        <div class="org-name">College of Liberal Arts, National Taiwan University</div>
       </div>
       <div class="org-card co fade-in">
-        <div class="org-type">協辦單位</div>
-        <div class="org-name">臺灣語言學學會</div>
+        <div class="org-type">Co-organizer</div>
+        <div class="org-name">Linguistic Society of Taiwan</div>
       </div>
     </div>
   </div>
@@ -806,13 +688,13 @@
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="section-eyebrow fade-in">CONTACT</div>
-    <div class="section-title fade-in">聯絡我們</div>
-    <p class="section-sub fade-in">有任何問題，歡迎隨時聯繫</p>
+    <div class="section-title fade-in">Contact Us</div>
+    <p class="section-sub fade-in">Feel free to reach out with any questions</p>
     <div class="contact-grid">
       <div class="contact-item fade-in">
         <div class="c-icon">📞</div>
-        <div class="c-label">電話</div>
-        <div class="c-val">02-3366-4105 何小姐</div>
+        <div class="c-label">Phone</div>
+        <div class="c-val">02-3366-4105 (Ms. Ho)</div>
       </div>
       <div class="contact-item fade-in">
         <div class="c-icon">✉️</div>
@@ -821,15 +703,15 @@
       </div>
       <div class="contact-item fade-in">
         <div class="c-icon">🕐</div>
-        <div class="c-label">服務時間</div>
-        <div class="c-val" style="font-size:13px">週一至週五 09:00–17:00<br><span style="color:var(--text2);font-size:12px;font-weight:400">午休 12:00–13:30</span></div>
+        <div class="c-label">Office Hours</div>
+        <div class="c-val" style="font-size:13px">Mon–Fri 09:00–17:00<br><span style="color:var(--text2);font-size:12px;font-weight:400">Lunch break 12:00–13:30</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 台灣語言文化與資訊協會 · 國立臺灣大學語言學研究所</p>
+  <p>© 2026 Taiwan Association of Linguistics, Language and Culture · Graduate Institute of Linguistics, NTU</p>
   <p style="margin-top:6px"><a href="mailto:ioltwtwiol@gmail.com">ioltwtwiol@gmail.com</a></p>
 </footer>
 
@@ -840,59 +722,37 @@
   const ctx = canvas.getContext('2d');
   let stars = [];
   const N = 120;
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
   function init() {
-    resize();
-    stars = [];
+    resize(); stars = [];
     for (let i = 0; i < N; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 1.6 + 0.3,
-        a: Math.random(),
-        da: (Math.random() - 0.5) * 0.006,
-        dx: (Math.random() - 0.5) * 0.12,
-        dy: (Math.random() - 0.5) * 0.06,
-      });
+      stars.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.6+0.3, a: Math.random(), da: (Math.random()-.5)*.006, dx: (Math.random()-.5)*.12, dy: (Math.random()-.5)*.06 });
     }
   }
-
   function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
     stars.forEach(s => {
-      s.x = (s.x + s.dx + canvas.width)  % canvas.width;
-      s.y = (s.y + s.dy + canvas.height) % canvas.height;
-      s.a += s.da;
-      if (s.a < 0.1 || s.a > 1) s.da *= -1;
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,0,${Math.abs(s.a)})`;
-      ctx.fill();
+      s.x=(s.x+s.dx+canvas.width)%canvas.width; s.y=(s.y+s.dy+canvas.height)%canvas.height;
+      s.a+=s.da; if(s.a<0.1||s.a>1) s.da*=-1;
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,255,0,${Math.abs(s.a)})`; ctx.fill();
     });
     requestAnimationFrame(draw);
   }
-
-  window.addEventListener('resize', init);
-  init();
-  draw();
+  window.addEventListener('resize', init); init(); draw();
 })();
 
 /* ── COUNTDOWN ── */
 function tick() {
   const deadline = new Date('2026-07-11T23:59:59+08:00');
   const diff = deadline - new Date();
-  if (diff <= 0) { document.getElementById('countdown').textContent = '優惠已結束'; return; }
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor(diff % 86400000 / 3600000);
-  const m = Math.floor(diff % 3600000 / 60000);
-  const s = Math.floor(diff % 60000 / 1000);
+  if (diff <= 0) { document.getElementById('countdown').textContent = 'Offer has ended'; return; }
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor(diff%86400000/3600000);
+  const m = Math.floor(diff%3600000/60000);
+  const s = Math.floor(diff%60000/1000);
   document.getElementById('countdown').textContent =
-    `${d} 天 ${String(h).padStart(2,'0')} 時 ${String(m).padStart(2,'0')} 分 ${String(s).padStart(2,'0')} 秒`;
+    `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
 }
 tick(); setInterval(tick, 1000);
 
@@ -908,13 +768,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 /* ── FADE-IN ON SCROLL ── */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-
 document.querySelectorAll('.fade-in').forEach((el, i) => {
   el.style.transitionDelay = (i % 5) * 0.07 + 's';
   observer.observe(el);
