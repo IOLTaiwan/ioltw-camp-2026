@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>分組名單 | 2026年語奧初階夏季邏輯營 — 國立臺灣大學</title>
+  <meta name="description" content="2026年語奧初階夏季邏輯營分組名單，8月19–21日於國立臺灣大學舉辦。共 17 組、64 位學員。" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="分組名單 | 2026年語奧初階夏季邏輯營" />
+  <meta property="og:description" content="2026 IOL Taiwan 初階邏輯夏令營分組名單，共 17 組、64 位學員。" />
+  <meta property="og:locale" content="zh_TW" />
+
+  <style>
+    /* ── VARIABLES — DARK (default) ── */
+    :root {
+      --bg:       #0a1628;
+      --bg2:      #0d1e35;
+      --bg3:      #112240;
+      --border:   rgba(100,160,230,.14);
+      --accent:   #4ec9f0;
+      --accent2:  #a78bfa;
+      --amber:    #f6c90e;
+      --green:    #4ade80;
+      --red:      #f87171;
+      --text:     #f0f4ff;
+      --text2:    #a8bdd4;
+      --nav-bg:   rgba(10,22,40,0.90);
+      --radius:   10px;
+      --radius-lg:16px;
+      --shadow:   0 4px 24px rgba(0,0,0,.35);
+    }
+
+    /* ── LIGHT MODE ── */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:       #f5f7fa;
+        --bg2:      #ffffff;
+        --bg3:      #eaf0f9;
+        --border:   rgba(0,60,120,.10);
+        --accent:   #0369a1;
+        --accent2:  #7c3aed;
+        --amber:    #b45309;
+        --green:    #16a34a;
+        --red:      #dc2626;
+        --text:     #1e293b;
+        --text2:    #475569;
+        --nav-bg:   rgba(245,247,250,0.92);
+        --shadow:   0 4px 24px rgba(0,60,120,.08);
+      }
+    }
+
+    /* ── WEB FONT: 源樣黑體 TW ── */
+    @font-face {
+      font-family: 'GenYoGothicTW';
+      font-style: normal;
+      font-weight: 100 500;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/gh/ButTaiwan/genyog-font@master/otf/TW/GenYoGothic2TW-R.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'GenYoGothicTW';
+      font-style: normal;
+      font-weight: 600 900;
+      font-display: swap;
+      src: url('https://cdn.jsdelivr.net/gh/ButTaiwan/genyog-font@master/otf/TW/GenYoGothic2TW-B.otf') format('opentype');
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'GenYoGothicTW', '源樣黑體', 'PingFang TC', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: var(--nav-bg);
+      backdrop-filter: blur(16px) saturate(1.5);
+      -webkit-backdrop-filter: blur(16px) saturate(1.5);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .nav-logo {
+      font-size: 15px; font-weight: 700;
+      color: var(--accent); letter-spacing: .01em;
+    }
+    .nav-logo a { color: inherit; text-decoration: none; }
+    .nav-links { display: flex; gap: 6px; }
+    .nav-links a {
+      font-size: 14px; color: var(--text2); font-weight: 500;
+      text-decoration: none; padding: 6px 12px; border-radius: 6px;
+      transition: color .2s, background .2s;
+    }
+    .nav-links a:hover { color: var(--accent); background: rgba(78,201,240,.08); }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 120px 0 88px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800; color: var(--text); line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 16px; color: var(--text2); margin-bottom: 16px;
+    }
+
+    .info-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
+    .info-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 6px; padding: 8px 16px;
+      font-size: 13px; color: var(--text2);
+    }
+    .info-tag span { color: var(--accent); }
+
+    /* ── GROUP CARDS ── */
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .group-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .group-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .group-num {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 6px;
+    }
+    .group-name { font-size: 19px; font-weight: 700; line-height: 1.3; }
+    .group-name em {
+      font-style: normal;
+      background: linear-gradient(135deg, #4ec9f0, #a78bfa);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    @media (prefers-color-scheme: light) {
+      .group-name em {
+        background: linear-gradient(135deg, #0369a1, #7c3aed);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+    .group-origin { font-size: 12px; color: var(--text2); margin-bottom: 14px; }
+    .group-members { list-style: none; border-top: 1px solid var(--border); }
+    .group-members li {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+      padding: 9px 2px; border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .group-members li:last-child { border-bottom: none; }
+    .member-school { color: var(--text2); font-size: 13px; line-height: 1.5; }
+    .member-name { font-weight: 700; color: var(--text); white-space: nowrap; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 28px; text-align: center;
+      font-size: 13px; color: var(--text2);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .nav-links a { padding: 6px 8px; font-size: 13px; }
+      section { padding: 104px 0 64px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><a href="index.html">2026年語奧初階夏季邏輯營</a></div>
+    <div class="nav-links">
+      <a href="index.html">← 回活動首頁</a>
+    </div>
+  </div>
+</nav>
+
+<!-- GROUPS -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">GROUPS</div>
+    <div class="section-title">分組名單</div>
+    <p class="section-sub">2026 IOL Taiwan 初階邏輯夏令營 · 共 17 組、64 位學員</p>
+    <div class="info-tags">
+      <div class="info-tag"><span>🗓</span> 2026/8/19（三）～ 8/21（五）・每日 10:00–16:00</div>
+      <div class="info-tag"><span>📍</span> 國立臺灣大學 綜合教學館 301 教室</div>
+    </div>
+
+    <div class="groups-grid">
+
+      <div class="group-card">
+        <div class="group-num">第 1 組</div>
+        <div class="group-name">布加勒斯特 <em>Bucharest</em></div>
+        <div class="group-origin">（原：均頭國際隊）</div>
+        <ul class="group-members">
+          <li><span class="member-school">南投縣均頭國際實驗教育機構</span><span class="member-name">蘇O睿</span></li>
+          <li><span class="member-school">南投縣均頭國際實驗教育機構</span><span class="member-name">陳O濤</span></li>
+          <li><span class="member-school">南投縣私立均頭國民中小學（國中部）</span><span class="member-name">蘭O紳</span></li>
+          <li><span class="member-school">南投縣均頭國際實驗教育機構</span><span class="member-name">陳O婗</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 2 組</div>
+        <div class="group-name">斯德哥爾摩 <em>Stockholm</em></div>
+        <div class="group-origin">（原：王O安隊）</div>
+        <ul class="group-members">
+          <li><span class="member-school">臺北市私立復興實驗高級中學</span><span class="member-name">王O安</span></li>
+          <li><span class="member-school">臺北市私立復興實驗高級中學</span><span class="member-name">張O安</span></li>
+          <li><span class="member-school">臺北市私立復興實驗高級中學（小學部）</span><span class="member-name">簡O</span></li>
+          <li><span class="member-school">臺北市私立復興實驗高級中學</span><span class="member-name">陳O璇</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 3 組</div>
+        <div class="group-name">塔爾圖 <em>Tartu</em></div>
+        <div class="group-origin">（原：9090隊）</div>
+        <ul class="group-members">
+          <li><span class="member-school">國立中科實驗高級中學（國中部）</span><span class="member-name">張O柔</span></li>
+          <li><span class="member-school">臺中市私立弘文高級中學</span><span class="member-name">楊O儀</span></li>
+          <li><span class="member-school">臺中市私立明道高級中學</span><span class="member-name">楊O媛</span></li>
+          <li><span class="member-school">臺中市私立弘文高級中學</span><span class="member-name">楊O承</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 4 組</div>
+        <div class="group-name">台北 <em>Taipei</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">花蓮縣立自強國民中學</span><span class="member-name">郭O語</span></li>
+          <li><span class="member-school">花蓮縣立國風國民中學</span><span class="member-name">彭O妍</span></li>
+          <li><span class="member-school">新北市林口康橋國際高級中等學校</span><span class="member-name">謝O學</span></li>
+          <li><span class="member-school">新竹市立光武國民中學</span><span class="member-name">戴O諾</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 5 組</div>
+        <div class="group-name">巴西利亞 <em>Brasília</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">康橋國際學校</span><span class="member-name">謝O允</span></li>
+          <li><span class="member-school">新北市立中山國民中學</span><span class="member-name">陳O雅</span></li>
+          <li><span class="member-school">臺北市私立復興實驗高級中學</span><span class="member-name">何O諳</span></li>
+          <li><span class="member-school">新北市林口康橋國際高級中等學校</span><span class="member-name">陳O文</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 6 組</div>
+        <div class="group-name">班斯科 <em>Bansko</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">桃園市復旦高級中等學校（附設國中部）</span><span class="member-name">劉O賀</span></li>
+          <li><span class="member-school">臺中市私立曉明女子高級中學</span><span class="member-name">蔡O妡</span></li>
+          <li><span class="member-school">屏東縣立中正國民中學</span><span class="member-name">黃O禎</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 7 組</div>
+        <div class="group-name">卡索頓 <em>Castletown</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">康橋國際學校</span><span class="member-name">陳O璇</span></li>
+          <li><span class="member-school">國立新竹科學園區實驗高級中等學校</span><span class="member-name">張O榕</span></li>
+          <li><span class="member-school">雲林縣立蔦松藝術高級中等學校</span><span class="member-name">蕭O星</span></li>
+          <li><span class="member-school">臺北市私立復興實驗高級中學（雙語部）</span><span class="member-name">邱O聆</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 8 組</div>
+        <div class="group-name">文茨皮爾斯 <em>Ventspils</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">新北市立福和國民中學</span><span class="member-name">李O容</span></li>
+          <li><span class="member-school">臺中市立向上國民中學</span><span class="member-name">劉O希（素）</span></li>
+          <li><span class="member-school">自學</span><span class="member-name">兵O擎</span></li>
+          <li><span class="member-school">臺北市立誠正國民中學</span><span class="member-name">曾O予</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 9 組</div>
+        <div class="group-name">龍仁 <em>Yongin</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">臺中市私立嶺東高級中學（國中部）</span><span class="member-name">劉O彤</span></li>
+          <li><span class="member-school">臺北市樂之學苑實驗教育機構</span><span class="member-name">陳O亦</span></li>
+          <li><span class="member-school">臺北市立弘道國民中學</span><span class="member-name">邱O銓</span></li>
+          <li><span class="member-school">臺北市立敦化國民中學</span><span class="member-name">黃O皓</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 10 組</div>
+        <div class="group-name">布拉格 <em>Prague</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">國立政治大學附屬高級中學</span><span class="member-name">紀O寧</span></li>
+          <li><span class="member-school">桃園市復旦高級中等學校（附設國中部）</span><span class="member-name">江O昀</span></li>
+          <li><span class="member-school">國立馬公高級中學</span><span class="member-name">呂O宸</span></li>
+          <li><span class="member-school">中正國民中學</span><span class="member-name">鍾O香</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 11 組</div>
+        <div class="group-name">都柏林 <em>Dublin</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">國立南科國際實驗高級中學（雙語部）</span><span class="member-name">陳O萱（素）</span></li>
+          <li><span class="member-school">臺北市立第一女子高級中學</span><span class="member-name">高O茜</span></li>
+          <li><span class="member-school">國立新竹高級中學</span><span class="member-name">陳O煥</span></li>
+          <li><span class="member-school">國立新竹科學園區實驗高級中等學校（國中部）</span><span class="member-name">江O亮</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 12 組</div>
+        <div class="group-name">邁索爾 <em>Mysore</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">臺北市立景美女子高級中學</span><span class="member-name">宋O桐</span></li>
+          <li><span class="member-school">臺北市立明倫高級中學</span><span class="member-name">陳O丞</span></li>
+          <li><span class="member-school">臺北市立中山女子高級中學</span><span class="member-name">吳O真</span></li>
+          <li><span class="member-school">臺北市立弘道國民中學</span><span class="member-name">邱O玲</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 13 組</div>
+        <div class="group-name">布拉戈耶夫格勒 <em>Blagoevgrad</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">國立屏科實驗高級中等學校</span><span class="member-name">鍾O荷</span></li>
+          <li><span class="member-school">臺北市立育成高級中學</span><span class="member-name">張O芯</span></li>
+          <li><span class="member-school">國立宜蘭高級中學</span><span class="member-name">陳O洋</span></li>
+          <li><span class="member-school">新北市崇光高級中學（國中部）</span><span class="member-name">林O均</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 14 組</div>
+        <div class="group-name">北京 <em>Beijing</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">新北市立錦和高級中學</span><span class="member-name">吳O誼</span></li>
+          <li><span class="member-school">雲林縣立古坑華德福實驗高級中學</span><span class="member-name">洪O博</span></li>
+          <li><span class="member-school">桃園市立桃園高級中等學校</span><span class="member-name">蘇O心</span></li>
+          <li><span class="member-school">桃園市有得實驗教育機構</span><span class="member-name">吳O</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 15 組</div>
+        <div class="group-name">曼徹斯特 <em>Manchester</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">國立金門高級中學</span><span class="member-name">黃O穎</span></li>
+          <li><span class="member-school">新北市私立時雨高級中學</span><span class="member-name">邱O瀅</span></li>
+          <li><span class="member-school">國立嘉義高級中學</span><span class="member-name">陳O朋</span></li>
+          <li><span class="member-school">臺北市立大同高級中學</span><span class="member-name">魏O辰</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 16 組</div>
+        <div class="group-name">盧比安納 <em>Ljubljana</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">康橋國際學校</span><span class="member-name">林O攸</span></li>
+          <li><span class="member-school">臺北市私立靜心高級中學（小學部）</span><span class="member-name">陳O君</span></li>
+          <li><span class="member-school">臺中市私立明道高級中學</span><span class="member-name">劉O銘</span></li>
+          <li><span class="member-school">新北市康橋高級中學（秀岡校區）</span><span class="member-name">陳O希</span></li>
+        </ul>
+      </div>
+
+      <div class="group-card">
+        <div class="group-num">第 17 組</div>
+        <div class="group-name">萊頓 <em>Leiden</em></div>
+        <div class="group-origin">&nbsp;</div>
+        <ul class="group-members">
+          <li><span class="member-school">國立彰化高級中學</span><span class="member-name">王O民</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 台灣語言文化與資訊協會 · 國立臺灣大學語言學研究所 ｜ <a href="index.html">回活動首頁</a>
+</footer>
+
+</body>
+</html>
